@@ -2,6 +2,7 @@
 * 
 !*.* 
 !*/ 
+!makefile
 
 # Ignore all object files 
 *.o 
