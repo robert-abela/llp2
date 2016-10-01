@@ -1,0 +1,14 @@
+# CC represents the compiler the compiler to use
+CC=g++
+# CFLAGS are the compiler options
+CFLAGS=-Wall -c
+
+all: hello
+hello: main.o hello_fn.o
+	$(CC) main.o hello_fn.o -o newhello
+main.o: main.c
+	$(CC) $(CFLAGS) main.c
+hello_fn.o: hello_fn.c
+	$(CC) $(CFLAGS) hello_fn.c
+clean:
+	rm *.o newhello
