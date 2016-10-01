@@ -1,0 +1,10 @@
+# Ignore all files without extension
+* 
+!*.* 
+!*/ 
+
+# Ignore all object files 
+*.o 
+
+# Ignore bin folder
+bin
