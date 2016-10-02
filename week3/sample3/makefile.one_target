@@ -1,0 +1,19 @@
+# CC represents the compiler the compiler to use
+CC=gcc
+# CFLAGS are the compiler options
+CFLAGS=-Wall -c
+# target (WIN32 or LINUX)
+TARGET=LINUX
+# name of binary executable
+OUT=hello
+
+all: hello
+
+hello: main.o
+	$(CC) main.o -o $(OUT)
+
+main.o: main.c
+	$(CC) $(CFLAGS) -D$(TARGET) main.c
+
+clean:
+	rm *.o $(OUT)
