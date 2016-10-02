@@ -1,5 +1,5 @@
 # CC represents the compiler the compiler to use
-CC=g++
+CC=gcc
 # CFLAGS are the compiler options
 CFLAGS=-Wall -c
 
