@@ -1,0 +1,11 @@
+# Ignore all files without extension
+* 
+!*.* 
+!*/ 
+!makefile*
+
+# Ignore all object files 
+*.o 
+
+# Ignore bin folder
+bin
