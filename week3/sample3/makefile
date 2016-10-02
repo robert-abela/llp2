@@ -19,4 +19,4 @@ main_lnx.o: main.c
 	$(CC) $(CFLAGS) -DLINUX main.c
 
 clean:
-	rm *.o $(WIN_OUT) $(LNX_OUT)
+	-rm *.o $(WIN_OUT) $(LNX_OUT)

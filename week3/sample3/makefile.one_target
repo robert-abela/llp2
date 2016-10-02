@@ -16,4 +16,4 @@ main.o: main.c
 	$(CC) $(CFLAGS) -D$(TARGET) main.c
 
 clean:
-	rm *.o $(OUT)
+	-rm *.o $(OUT)
