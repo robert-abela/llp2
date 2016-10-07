@@ -2,6 +2,6 @@
 
 int main (void) 
 {
-  hello ("world");
+  hello("world");
   return 0;
 }
