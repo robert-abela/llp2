@@ -1,0 +1,5 @@
+dog 88
+fish 6
+iguana 3
+rhino 5
+harambe 0
