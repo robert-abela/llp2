@@ -3,13 +3,18 @@
 #include <pthread.h>
 #include <stdlib.h>
 
-#define DELAY 2
-#define BALANCE 100
-#define WITHDRAW_AMOUNT 40
+#define THREAD_DELAY 	2
+#define INIT_BALANCE 	100
+#define WITHDRAW_AMOUNT 35
+#define NUM_THREADS		4
 
 pthread_mutex_t balance_mutex;
-int balance = BALANCE;
+int balance = INIT_BALANCE;
 
+/**
+ * Reduces amount from the global balance. 
+ * Returns the amount withdrawn if successful or -1 if refused.
+ */
 int withdraw(int amount) 
 {
 	pthread_mutex_lock(&balance_mutex);
@@ -22,28 +27,33 @@ int withdraw(int amount)
 	else 
 	{
 		pthread_mutex_unlock(&balance_mutex);
-		return 0;
+		return -1;
 	}
 }
 
-void *try_to_withdraw(void *argument)
+/**
+ * Function to be used as a thread that attempts a withdrawal.
+ */
+void *try_to_withdraw(void *tid)
 {
-	int* thread_id = (int*)argument;
-	printf("Thread%d: waiting for %d seconds...\n", *thread_id, DELAY);
-	sleep(DELAY);
-	printf("Thread%d: trying to withdraw %d\n", *thread_id, WITHDRAW_AMOUNT);
+	int* thread_id = (int*)tid;
+	sleep(THREAD_DELAY);
+	printf("T %d: trying to withdraw %d\n", *thread_id, WITHDRAW_AMOUNT);
 	if (withdraw(WITHDRAW_AMOUNT) == WITHDRAW_AMOUNT)
-		printf("Thread%d: Successfully withdrawn\n", *thread_id);
+		printf("T %d: Successfully withdrawn\n", *thread_id);
 	else
-		printf("Thread%d: Failed to withdraw\n", *thread_id);
+		printf("T %d: Failed to withdraw\n", *thread_id);
 
   	return NULL;
 }
 
+/**
+ * Main entry point: creates and launches 4 threads.
+ */
 int main()
 { 
-	pthread_t threads[3];
-	int thread_ids[] = {1,2,3};
+	pthread_t threads[NUM_THREADS];
+	int thread_ids[NUM_THREADS];
 
 	if (sysconf(_SC_THREADS) == -1)
 	{
@@ -55,8 +65,9 @@ int main()
   	pthread_mutex_init(&balance_mutex, NULL);
 
   	//start all the threads
-  	for (int i=0; i < 3; i++)
+  	for (int i=0; i<NUM_THREADS; i++)
   	{
+  		thread_ids[i] = i+1;
   		if (pthread_create(&threads[i], NULL, try_to_withdraw, &thread_ids[i]) != 0)
 	    	fprintf(stderr, "Failed to create thread %d!\n", thread_ids[i]);
 	    else
@@ -65,8 +76,8 @@ int main()
 
   	//wait for all threads to finish
 	printf("Main: Wait for all threads to finish...\n\n");
-  	for (int i=0; i < 3; i++)
-  		pthread_join(threads[i], NULL);
+  	for (int j=0; j<NUM_THREADS; j++)
+  		pthread_join(threads[j], NULL);
 
   	//destroy mutex and exit
   	pthread_mutex_destroy(&balance_mutex);
