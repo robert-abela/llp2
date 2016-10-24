@@ -1,0 +1,24 @@
+llp2@ubuntu:~/Documents/llp2/worksheets/worksheet5$ make
+rm test1 test2 test3 test4 test5
+gcc -Wall -o test1 size1.c
+gcc -Wall -o test2 size2.c
+gcc -Wall -Wno-unused-variable -o test3 size3.c
+gcc -Wall -Wno-unused-variable -o test4 size4.c
+gcc -Wall -Wno-unused-variable -o test5 size5.c
+llp2@ubuntu:~/Documents/llp2/worksheets/worksheet5$ make size
+size test1
+   text	   data	    bss	    dec	    hex	filename
+   1017	    272	      4	   1293	    50d	test1
+size test2
+   text	   data	    bss	    dec	    hex	filename
+   1017	    272	      8	   1297	    511	test2
+size test3
+   text	   data	    bss	    dec	    hex	filename
+   1017	    272	     12	   1301	    515	test3
+size test4
+   text	   data	    bss	    dec	    hex	filename
+   1017	    276	      8	   1301	    515	test4
+size test5
+   text	   data	    bss	    dec	    hex	filename
+   1017	    280	      4	   1301	    515	test5
+llp2@ubuntu:~/Documents/llp2/worksheets/worksheet5$ 
