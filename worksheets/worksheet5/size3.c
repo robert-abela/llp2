@@ -1,7 +1,7 @@
 #include <stdio.h> 
-int global; /* Uninitialized variable stored in BSS*/
+int global; /* Uninitialized variable stored in BSS */
 int main(void)
 {
-	static int i; /* Initialized static variable stored in DS*/
+	static int i; /* Uninitialized static variable stored in BSS */
 	return 0;
 }
