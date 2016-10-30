@@ -6,26 +6,29 @@
 #define EMPTY -1
 #define MAX_SIZE 100
 #define NO_VALUE INT_MIN
-       
-int stack[MAX_SIZE];     
+
+/* The array that holds the values on the stack */
+int stack[MAX_SIZE];
+
+/* Top of the stack */
 int top = EMPTY;
-          
+
 /* Returns true if stack is empty */
 bool is_empty() 
 {
-   return true;
+	return true;
 }
 
 /* Returns true if stack is full */
 bool is_full() 
 {
-   return false;
+	return false;
 }
 
 /* Pop the int on top of the stack or return NO_VALUE if stack empty */
 int pop() 
-{	
-    return NO_VALUE;
+{
+	return NO_VALUE;
 }
 
 /* Push value on top of the stack. 
@@ -33,7 +36,7 @@ int pop()
  */
 bool push(int value) 
 {
-    return false;
+	return false;
 }
 
 #endif //REVISION_LO2_STACK_ARRAY_INCLUDED

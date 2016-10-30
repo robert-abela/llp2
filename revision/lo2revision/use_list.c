@@ -6,14 +6,18 @@
 
 struct item *head1 = NULL, *head2 = NULL;
 
-/* Join the two lists in a new one */
+/* Join the two lists in a new one 
+ * Hint: use push_item()
+ */
 struct item *join_lists()
 {
     struct item *joined = NULL;
     return joined;
 }
 
-/* Return a list that contains the values present in both lists */
+/* Return a list that contains the values present in both lists 
+ * Hint: use push_item() and exists()
+ */
 struct item *find_overlap()
 {
     struct item *overlap = NULL;
