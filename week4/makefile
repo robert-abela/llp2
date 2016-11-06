@@ -1,7 +1,8 @@
 all: clean build
 
 build:
-	gcc -Wall -o0 -g -o test test.c
+	gcc -Wall -ggdb -o0 -o test test.c
+	gcc -Wall -ggdb -o0 -o test2 test2.c
 
 clean:
-	-rm test
+	-rm test test2
