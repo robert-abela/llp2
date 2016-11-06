@@ -1,0 +1,126 @@
+Robert@DESKTOP ~
+$ make
+rm test
+gcc -Wall -g -o test test.c
+
+Robert@DESKTOP ~
+$ ls
+makefile  test.c  test.exe
+
+Robert@DESKTOP ~
+$ ./test
+Floating point exception (core dumped)
+
+Robert@DESKTOP ~
+$ ls
+makefile  test.c  test.exe  test.exe.stackdump
+
+Robert@DESKTOP ~
+$ gdb test test.exe.stackdump
+GNU gdb (GDB) (Cygwin 7.11.1-2) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-pc-cygwin".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from test...done.
+"/home/Robert/test.exe.stackdump" is not a core dump: File format not recognized
+(gdb) list
+1       #include <stdio.h>
+2
+3       void f2(int age)
+4       {
+5               int test = age-age;
+6               age = age / test;
+7       }
+8       void f1(int age)
+9       {
+10              int local = 10;
+(gdb)
+11              f2(age+local);
+12      }
+13      int main(int argc, char **argv)
+14      {
+15              int age = 33;
+16              f1(age);
+17              return 0;
+18      }
+19
+(gdb) run
+Starting program: /home/Robert/test
+[New Thread 3956.0x14f0]
+[New Thread 3956.0x1d0]
+[New Thread 3956.0x1694]
+[New Thread 3956.0x1a08]
+[New Thread 3956.0x1c48]
+
+Thread 1 "test" received signal SIGFPE, Arithmetic exception.
+0x004011e1 in f2 (age=43) at test.c:6
+6               age = age / test;
+(gdb) where
+#0  0x004011e1 in f2 (age=43) at test.c:6
+#1  0x00401207 in f1 (age=33) at test.c:11
+#2  0x0040122c in main (argc=1, argv=0x61cc6c) at test.c:16
+(gdb) continue
+Continuing.
+      0 [main] test 3956 cygwin_exception::open_stackdumpfile: Dumping stack trace to test.exe.stackdump
+[Thread 3956.0x1c48 exited with code 34816]
+[Thread 3956.0x1a08 exited with code 34816]
+[Thread 3956.0x1694 exited with code 34816]
+[Inferior 1 (process 3956) exited with code 0104000]
+(gdb) quit
+
+Robert@DESKTOP ~
+$ gdb test
+GNU gdb (GDB) (Cygwin 7.11.1-2) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-pc-cygwin".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from test...done.
+(gdb) break f2
+Breakpoint 1 at 0x4011d6: file test.c, line 5.
+(gdb) run
+Starting program: /home/Robert/test
+[New Thread 6652.0x83c]
+[New Thread 6652.0x1cc8]
+[New Thread 6652.0x1d58]
+[New Thread 6652.0x1988]
+[New Thread 6652.0xb00]
+
+Thread 1 "test" hit Breakpoint 1, f2 (age=43) at test.c:5
+5               int test = age-age;
+(gdb) step
+6               age = age / test;
+(gdb) info locals
+test = 0
+(gdb) set test = 1
+(gdb) info locals
+test = 1
+(gdb) continue
+Continuing.
+[New Thread 6652.0x1ab8]
+[Thread 6652.0x1ab8 exited with code 0]
+[Thread 6652.0x1988 exited with code 0]
+[Thread 6652.0xb00 exited with code 0]
+[Thread 6652.0x1d58 exited with code 0]
+[Inferior 1 (process 6652) exited normally]
+(gdb) quit
+

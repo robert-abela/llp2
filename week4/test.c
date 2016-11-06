@@ -14,6 +14,6 @@ int main(int argc, char **argv)
 {
 	int age = 33;
 	f1(age);
-    return 0;
+	return 0;
 }
 
