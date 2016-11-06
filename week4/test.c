@@ -2,8 +2,8 @@
 
 void f2(int age)
 {
-	int zero = 0;
-	age = age / zero;
+	int test = age-age;
+	age = age / test;
 }
 void f1(int age)
 {
