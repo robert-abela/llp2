@@ -19,6 +19,6 @@ void do_user_input()
 
 int main(int argc, char **argv)
 {
-	
+	do_user_input();
 	return 0;
 }
