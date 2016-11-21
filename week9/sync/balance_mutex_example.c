@@ -23,8 +23,8 @@ int withdraw(int amount)
 		balance -= amount;
 		pthread_mutex_unlock(&balance_mutex);
 		return amount;
-	} 
-	else 
+	}
+	else
 	{
 		pthread_mutex_unlock(&balance_mutex);
 		return -1;
@@ -44,42 +44,42 @@ void *try_to_withdraw(void *tid)
 	else
 		printf("T %d: Failed to withdraw\n", *thread_id);
 
-  	return NULL;
+	return NULL;
 }
 
 /**
  * Main entry point: creates and launches 4 threads.
  */
 int main()
-{ 
+{
 	pthread_t threads[NUM_THREADS];
 	int thread_ids[NUM_THREADS];
 
 	if (sysconf(_SC_THREADS) == -1)
 	{
-  		fprintf(stderr, "Error: Threads aren't supported.\n");
-    	return -1;
-   	}
+		fprintf(stderr, "Error: Threads aren't supported.\n");
+		return -1;
+	}
 
-   	//initialise mutex
-  	pthread_mutex_init(&balance_mutex, NULL);
+	//initialise mutex
+	pthread_mutex_init(&balance_mutex, NULL);
 
-  	//start all the threads
-  	for (int i=0; i<NUM_THREADS; i++)
-  	{
-  		thread_ids[i] = i+1;
-  		if (pthread_create(&threads[i], NULL, try_to_withdraw, &thread_ids[i]) != 0)
-	    	fprintf(stderr, "Failed to create thread %d!\n", thread_ids[i]);
-	    else
-	    	printf("Main: Thread %d started...\n", thread_ids[i]);
-  	}
+	//start all the threads
+	for (int i=0; i<NUM_THREADS; i++)
+	{
+		thread_ids[i] = i+1;
+		if (pthread_create(&threads[i], NULL, try_to_withdraw, &thread_ids[i]) != 0)
+			fprintf(stderr, "Failed to create thread %d!\n", thread_ids[i]);
+		else
+			printf("Main: Thread %d started...\n", thread_ids[i]);
+	}
 
-  	//wait for all threads to finish
+	//wait for all threads to finish
 	printf("Main: Wait for all threads to finish...\n\n");
-  	for (int j=0; j<NUM_THREADS; j++)
-  		pthread_join(threads[j], NULL);
+	for (int j=0; j<NUM_THREADS; j++)
+		pthread_join(threads[j], NULL);
 
-  	//destroy mutex and exit
-  	pthread_mutex_destroy(&balance_mutex);
-  	return 0;
+	//destroy mutex and exit
+	pthread_mutex_destroy(&balance_mutex);
+	return 0;
 }
