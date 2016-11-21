@@ -7,13 +7,13 @@
 int counter = 0;
 pthread_mutex_t counter_mutex;
 
-/* Increments X ITERATIONS times */
+/* Increments counter ITERATIONS times */
 void *do_work(void *ptr)
 {
 	for (int k=0; k<ITERATIONS; k++)
 	{
 		pthread_mutex_lock(&counter_mutex);
-		counter = counter + 1;
+		counter = counter+1;
 		pthread_mutex_unlock(&counter_mutex);
 	}
 	
