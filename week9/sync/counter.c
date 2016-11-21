@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <pthread.h>
-#include <stdlib.h>
 
 #define NUM_THREADS 5
 #define ITERATIONS 50000
@@ -12,7 +10,7 @@ int x = 0;
 void *do_work(void *tid)
 {
 	for (int k=0; k < ITERATIONS; k++)
-		x = x + 1; // (WARNING: RACE CONDITION)
+		x = x + 1;
 
 	return NULL;
 }
