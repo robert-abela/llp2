@@ -7,11 +7,14 @@ int main(void)
 	FILE *fp;
 
 	fp = fopen("file.txt", "r");
-	while (!feof(fp)) {
-		if (fscanf(fp, "%s %d", string, &num) != 2)
-			break;
-		printf("Read: %s\t%d\n", string, num);
-	}
+	if (fp != NULL)
+	{
+		while (!feof(fp)) {
+			if (fscanf(fp, "%s %d", string, &num) != 2)
+				break;
+			printf("Read: %s\t%d\n", string, num);
+		}
 
-	fclose(fp);
+		fclose(fp);
+	}
 }

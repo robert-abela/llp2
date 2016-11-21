@@ -6,6 +6,9 @@ int main(void)
 	FILE *fp;
 
 	fp = fopen("out.txt", "w");
-	fprintf(fp, "%s\n", string);
-	fclose(fp);
+	if (fp != NULL)
+	{
+		fprintf(fp, "%s\n", string);
+		fclose(fp);
+	}
 }
