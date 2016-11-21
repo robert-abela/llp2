@@ -4,17 +4,18 @@
 #define NUM_THREADS 5
 #define ITERATIONS 50000
 
-int x = 0;
+int counter = 0;
 
-/* Increments X 1000 times */
-void *do_work(void *tid)
+/* Increments counter ITERATIONS times */
+void *do_work(void *ptr)
 {
-	for (int k=0; k < ITERATIONS; k++)
-		x = x + 1;
+	for (int k=0; k<ITERATIONS; k++)
+		counter = counter + 1;
 
 	return NULL;
 }
 
+/** Launches NUM_THREADS threads that try to increment counter to NUM_THREADS*ITERATIONS */
 void try()
 {
 	pthread_t threads[NUM_THREADS];
@@ -29,10 +30,9 @@ void try()
 		pthread_join(threads[j], NULL);
 }
 
-/** Launches NUM_THREADS threads that try to increment x to NUM_THREADS*ITERATIONS */
-int main()
+int main(void)
 {
 	try();
-	printf("x = %d\n", x);
+	printf("counter = %d\n", counter);
 	return 0;
 }
