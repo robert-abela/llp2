@@ -5,7 +5,9 @@
 !makefile*
 
 # Ignore all object files 
-*.o 
+*.o
+*.a
+*.so
 *.exe*
 
 # Ignore bin folder
