@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* get the url address */
-	url = gethostbyname("mcast.edu.mt");
+	url = gethostbyname("mcast.edu.mt"); /* does not support IP6 */
 	if (url == NULL) {
 		fprintf(stderr, "ERROR: Host not found\n");
 		return 2;
