@@ -2,6 +2,7 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <string.h>
+#include <assert.h>
 #include "dummy_http.h"
 
 int main(int argc, char *argv[]) 
@@ -48,15 +49,21 @@ int main(int argc, char *argv[])
 		return 4;
 	}
 
-	/* Now read server response */
-	memset(buffer, 0, BUFFER_SIZE);
-	num_bytes = read(sockfd, buffer, BUFFER_SIZE-1);
+	/* make sure that all the request was sent */
+	assert(num_bytes == strlen(DUMMY_REQUEST));
+
+	/* Now read server response (may require multiple reads)*/
+	do {
+		memset(buffer, 0, BUFFER_SIZE);
+		num_bytes = read(sockfd, buffer, BUFFER_SIZE-1);
+		printf("%s",buffer);
+	} while (num_bytes > 0);
+	
 	if (num_bytes < 0) {
 		fprintf(stderr, "ERROR: Failed reading from socket\n");
 		return 5;
 	}
-
-	printf("Recieved: %s\n",buffer);
+	
 	close(sockfd);
 	return 0;
 }
