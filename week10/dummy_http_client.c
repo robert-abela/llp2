@@ -2,9 +2,7 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <string.h>
-
-#define BUFFER_SIZE	1024
-#define HTTP_PORT	80
+#include "dummy_http.h"
 
 int main(int argc, char *argv[]) 
 {
@@ -27,7 +25,7 @@ int main(int argc, char *argv[])
 		return 2;
 	}
 
-	/* Prepare the sockarrd_in structure */
+	/* Initialize socket structure (sockarrd_in) */
 	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
 	strncpy((char *)&serv_addr.sin_addr.s_addr, (char *)server->h_addr, server->h_length);
@@ -40,7 +38,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* Prepare request */
-	strcpy(buffer, "GET http://www.mcast.edu.mt HTTP/1.0\r\n\r\n");
+	strcpy(buffer, DUMMY_REQUEST);
 	printf("Sending: %s\n",buffer);
 
 	/* Send message to the server */
