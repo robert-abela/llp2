@@ -36,7 +36,7 @@ void* handle_client(void *socket)
 int main( int argc, char *argv[] ) 
 {
 	struct sockaddr_in serv_addr, cli_addr;
-	int clilen = sizeof(cli_addr);
+	socklen_t clilen = sizeof(cli_addr);
 	int sockfd, thread_res;
 	pthread_t mythread;
 
