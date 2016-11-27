@@ -57,7 +57,6 @@ int main(int argc, char *argv[])
 	}
 
 	printf("Recieved: %s\n",buffer);
-
 	close(sockfd);
 	return 0;
 }
