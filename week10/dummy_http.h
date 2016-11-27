@@ -1,5 +1,6 @@
-#define BUFFER_SIZE	1024
-#define HTTP_PORT 	80
+#define BUFFER_SIZE		1024
+#define HTTP_PORT 		80
+#define MAX_CONNECTIONS 5
 
 #define DUMMY_REQUEST 	"GET http://www.mcast.edu.mt HTTP/1.0\r\n\
 \r\n"

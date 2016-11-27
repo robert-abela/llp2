@@ -20,7 +20,7 @@ int main( int argc, char *argv[] )
 	/* Initialize socket structure (sockarrd_in) */
 	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK); //INADDR_ANY
+	serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK); //or INADDR_ANY
 	serv_addr.sin_port = htons(HTTP_PORT);
 
 	/* Bind the host address */
@@ -30,7 +30,7 @@ int main( int argc, char *argv[] )
 	}
 
 	/* Start listening for the clients (thread blocks) */
-	listen(sockfd, 5);
+	listen(sockfd, MAX_CONNECTIONS);
 	clilen = sizeof(cli_addr);
 
 	//for (;;)

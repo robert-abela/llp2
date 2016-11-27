@@ -11,6 +11,8 @@ void* handle_client(void *socket)
 	int newsockfd = (int)socket;
 	pthread_t thread_id = pthread_self();
 
+	printf("----------\nThread %lu using socket %x\n", (unsigned long)thread_id, newsockfd);
+
 	/* Start communicating */
 	int num_bytes = read(newsockfd, buffer, BUFFER_SIZE-1);
 	if (num_bytes < 0) {
@@ -48,7 +50,7 @@ int main( int argc, char *argv[] )
 	/* Initialize socket structure (sockarrd_in) */
 	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+	serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK); //or INADDR_ANY
 	serv_addr.sin_port = htons(HTTP_PORT);
 
 	/* Bind the host address */
@@ -58,7 +60,7 @@ int main( int argc, char *argv[] )
 	}
 
 	/* Start listening for the clients (thread blocks) */
-	listen(sockfd, 5);
+	listen(sockfd, MAX_CONNECTIONS);
 	for (;;)
 	{
 		/* Accept connection from a client */
