@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	int sockfd, num_bytes;
 	struct sockaddr_in serv_addr;
-	struct hostent *server;
+	struct hostent *url;
 	char buffer[BUFFER_SIZE] = {0};
 
 	/* Create a socket */
@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	/* get the server address */
-	server = gethostbyname("mcast.edu.mt");
-	if (server == NULL) {
+	/* get the url address */
+	url = gethostbyname("mcast.edu.mt");
+	if (url == NULL) {
 		fprintf(stderr, "ERROR: Host not found\n");
 		return 2;
 	}
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	/* Initialize socket structure (sockarrd_in) */
 	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	strncpy((char *)&serv_addr.sin_addr.s_addr, (char *)server->h_addr, server->h_length);
+	memcpy(&serv_addr.sin_addr, url->h_addr, url->h_length);
 	serv_addr.sin_port = htons(HTTP_PORT);
 
 	/* Connect to the server */
