@@ -33,29 +33,34 @@ int main( int argc, char *argv[] )
 	listen(sockfd, 5);
 	clilen = sizeof(cli_addr);
 
-	/* Accept connection from a client */
-	newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
-	if (newsockfd < 0) {
-		fprintf(stderr, "ERROR: accept() failed\n");
-		return 3;
-	}
+	//for (;;)
+	//{
+		/* Accept connection from a client */
+		newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
+		if (newsockfd < 0) {
+			fprintf(stderr, "ERROR: accept() failed\n");
+			return 3;
+		}
 
-	/* Clear buffer and start communicating */
-	memset(buffer, 0, BUFFER_SIZE);
-	num_bytes = read(newsockfd, buffer, BUFFER_SIZE-1);
-	if (num_bytes < 0) {
-		fprintf(stderr, "ERROR: read() failed\n");
-		return 4;
-	}
-	printf("Recieved: %s\n", buffer);
+		/* Clear buffer and start communicating */
+		memset(buffer, 0, BUFFER_SIZE);
+		num_bytes = read(newsockfd, buffer, BUFFER_SIZE-1);
+		if (num_bytes < 0) {
+			fprintf(stderr, "ERROR: read() failed\n");
+			return 4;
+		}
+		printf("Recieved: %s\n", buffer);
 
-	/* Write a response to the client */
-	printf("Sending: %s\n", DUMMY_RESPONSE);
-	num_bytes = write(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE));
-	if (num_bytes < 0) {
-		fprintf(stderr, "ERROR: write() failed\n");
-		return 5;
-	}
+		/* Write a response to the client */
+		printf("Sending: %s\n", DUMMY_RESPONSE);
+		num_bytes = write(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE));
+		if (num_bytes < 0) {
+			fprintf(stderr, "ERROR: write() failed\n");
+			return 5;
+		}
+
+		close(newsockfd);
+	//}
 
 	return 0;
 }
