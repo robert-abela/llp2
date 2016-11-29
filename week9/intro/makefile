@@ -4,10 +4,10 @@ check_posix:
 	gcc -Wall -o check_posix check_posix.c
 
 thread_example:
-	gcc -Wall -lpthread -o thread_example thread_example.c
+	gcc -Wall -o thread_example thread_example.c -lpthread
 
 thread_params_example:
-	gcc -Wall -lpthread -o thread_params_example thread_params_example.c
+	gcc -Wall -o thread_params_example thread_params_example.c -lpthread
 
 clean:
 	-rm check_posix thread_example thread_params_example

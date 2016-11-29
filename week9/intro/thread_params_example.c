@@ -6,7 +6,7 @@ void* print_msg(void *ptr)
 {
 	sleep(5); // seconds
 	printf("Message from thread: %s \n", (char*)ptr);
-	return ptr;
+	return NULL;
 }
 
 int main(void)

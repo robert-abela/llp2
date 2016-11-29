@@ -1,10 +1,10 @@
 all: clean counter counter_mutex
 
 counter:
-	gcc -Wall -lpthread -o counter counter.c
+	gcc -Wall -o counter counter.c -lpthread
 
 counter_mutex:
-	gcc -Wall -lpthread -o counter_mutex counter_mutex.c
+	gcc -Wall -o counter_mutex counter_mutex.c -lpthread
 
 clean:
 	-rm counter counter_mutex
