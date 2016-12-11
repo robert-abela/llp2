@@ -19,7 +19,7 @@ int main()
         printf("\n");
     }
 
-    for (int l=0;l<3;l++)
+    for (int l=0; l<3; l++)
     {
         for(int m=0; m<(ROWS*2+1)/2; m++)
             printf(" ");
