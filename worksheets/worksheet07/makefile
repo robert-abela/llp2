@@ -1,4 +1,4 @@
-all: overflow overflow_spp
+all: clean overflow overflow_spp
 
 # Function gets() has been removed from C11 standard. 
 # That means there's no longer a prototype for gets() in <stdio.h>. 
