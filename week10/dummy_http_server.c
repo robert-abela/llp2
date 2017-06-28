@@ -10,7 +10,7 @@ int main( int argc, char *argv[] )
 {
 	int sockfd, newsockfd, num_bytes;
 	char buffer[BUFFER_SIZE];
-	socklen_t clilen;
+	socklen_t clilen = sizeof(cli_addr);
 	struct sockaddr_in serv_addr, cli_addr;
 
 	/* Create a socket */
@@ -39,8 +39,6 @@ int main( int argc, char *argv[] )
 		fprintf(stderr, "Error code: %s\n", strerror(errno));
 		return 3;
 	}
-
-	clilen = sizeof(cli_addr);
 
 	//for (;;)
 	//{
