@@ -10,8 +10,8 @@ int main( int argc, char *argv[] )
 {
 	int sockfd, newsockfd, num_bytes;
 	char buffer[BUFFER_SIZE];
-	socklen_t clilen = sizeof(cli_addr);
 	struct sockaddr_in serv_addr, cli_addr;
+	socklen_t clilen = sizeof(cli_addr);
 
 	/* Create a socket */
 	sockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
