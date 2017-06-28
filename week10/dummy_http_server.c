@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <netdb.h>
 #include <unistd.h>
+#include <errno.h>
 #include <string.h>
+
 #include "dummy_http.h"
 
 int main( int argc, char *argv[] ) 
 {
-	int sockfd, newsockfd, clilen, num_bytes;
+	int sockfd, newsockfd, num_bytes;
 	char buffer[BUFFER_SIZE];
+	socklen_t clilen;
 	struct sockaddr_in serv_addr, cli_addr;
 
 	/* Create a socket */
@@ -26,11 +29,17 @@ int main( int argc, char *argv[] )
 	/* Bind the host address */
 	if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
 		fprintf(stderr, "ERROR: bind() failed\n");
+		fprintf(stderr, "Error code: %s\n", strerror(errno));
 		return 2;
 	}
 
 	/* Start listening for the clients (thread blocks) */
-	listen(sockfd, MAX_CONNECTIONS);
+	if (listen(sockfd, MAX_CONNECTIONS) < 0) {
+		fprintf(stderr, "ERROR: listen() failed\n");
+		fprintf(stderr, "Error code: %s\n", strerror(errno));
+		return 3;
+	}
+
 	clilen = sizeof(cli_addr);
 
 	//for (;;)
@@ -39,7 +48,7 @@ int main( int argc, char *argv[] )
 		newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
 		if (newsockfd < 0) {
 			fprintf(stderr, "ERROR: accept() failed\n");
-			return 3;
+			return 4;
 		}
 
 		/* Clear buffer and start communicating */
@@ -47,7 +56,7 @@ int main( int argc, char *argv[] )
 		num_bytes = read(newsockfd, buffer, BUFFER_SIZE-1);
 		if (num_bytes < 0) {
 			fprintf(stderr, "ERROR: read() failed\n");
-			return 4;
+			return 5;
 		}
 		printf("Recieved: %s\n", buffer);
 
@@ -56,7 +65,7 @@ int main( int argc, char *argv[] )
 		num_bytes = write(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE));
 		if (num_bytes < 0) {
 			fprintf(stderr, "ERROR: write() failed\n");
-			return 5;
+			return 6;
 		}
 
 		close(newsockfd);

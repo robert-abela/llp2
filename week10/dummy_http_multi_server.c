@@ -60,21 +60,25 @@ int main( int argc, char *argv[] )
 	}
 
 	/* Start listening for the clients (thread blocks) */
-	listen(sockfd, MAX_CONNECTIONS);
+	if (listen(sockfd, MAX_CONNECTIONS) != 0) {
+		fprintf(stderr, "ERROR: listen() failed\n");
+		return 3;
+	}
+
 	for (;;)
 	{
 		/* Accept connection from a client */
 		int newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
 		if (newsockfd < 0) {
 			fprintf(stderr, "ERROR: accept() failed\n");
-			return 3;
+			return 4;
 		}
 
 		thread_res = pthread_create(&mythread, NULL, handle_client, (void*)newsockfd);
 		if (thread_res != 0)
 		{
 			fprintf(stderr, "ERROR: pthread_create() failed\n");
-			return 4;
+			return 5;
 		}
 	}
 

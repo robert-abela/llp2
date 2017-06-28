@@ -7,7 +7,7 @@ server:
 	gcc -Wall -o server dummy_http_server.c
 
 multi_server:
-	gcc -Wall -o multi_server dummy_http_multi_server.c
+	gcc -Wall -o multi_server dummy_http_multi_server.c -lpthread
 
 clean:
 	-rm client server multi_server
