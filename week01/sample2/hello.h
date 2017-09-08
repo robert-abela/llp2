@@ -1,3 +1,3 @@
-void hello (
+void h (
   const char* name
 );
