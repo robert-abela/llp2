@@ -1,29 +1,27 @@
-Robert@DESKTOP ~
-$ make
-rm test
-gcc -Wall -g -o test test.c
-
-Robert@DESKTOP ~
-$ ls
-makefile  test.c  test.exe
-
-Robert@DESKTOP ~
-$ ./test
+llp2@ubuntu:~/Documents/llp2/week04$ ls
+makefile  test2.c  test.c  test.dgb.trace.txt
+llp2@ubuntu:~/Documents/llp2/week04$ make
+rm test test2
+rm: cannot remove 'test': No such file or directory
+rm: cannot remove 'test2': No such file or directory
+makefile:8: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+gcc -Wall -g -o0 -o test test.c
+gcc -Wall -g -o0 -o test2 test2.c
+llp2@ubuntu:~/Documents/llp2/week04$ ls
+makefile  test  test2  test2.c  test.c  test.dgb.trace.txt
+llp2@ubuntu:~/Documents/llp2/week04$ ./test
 Floating point exception (core dumped)
-
-Robert@DESKTOP ~
-$ ls
-makefile  test.c  test.exe  test.exe.stackdump
-
-Robert@DESKTOP ~
-$ gdb test test.exe.stackdump
-GNU gdb (GDB) (Cygwin 7.11.1-2) 7.11.1
+llp2@ubuntu:~/Documents/llp2/week04$ ls
+core  makefile  test  test2  test2.c  test.c  test.dgb.trace.txt
+llp2@ubuntu:~/Documents/llp2/week04$ gdb test
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
 Copyright (C) 2016 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
 and "show warranty" for details.
-This GDB was configured as "i686-pc-cygwin".
+This GDB was configured as "i686-linux-gnu".
 Type "show configuration" for configuration details.
 For bug reporting instructions, please see:
 <http://www.gnu.org/software/gdb/bugs/>.
@@ -32,95 +30,69 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from test...done.
-"/home/Robert/test.exe.stackdump" is not a core dump: File format not recognized
 (gdb) list
-1       #include <stdio.h>
-2
-3       void f2(int age)
-4       {
-5               int test = age-age;
-6               age = age / test;
-7       }
-8       void f1(int age)
-9       {
-10              int local = 10;
-(gdb)
-11              f2(age+local);
-12      }
-13      int main(int argc, char **argv)
-14      {
-15              int age = 33;
-16              f1(age);
-17              return 0;
-18      }
-19
+1	#include <stdio.h>
+2	
+3	void f2(int age)
+4	{
+5		int test = age-age;
+6		age = age / test;
+7	}
+8	void f1(int age)
+9	{
+10		int local = 10;
+(gdb) 
+11		f2(age+local);
+12	}
+13	int main(int argc, char **argv)
+14	{
+15		int age = 33;
+16		f1(age);
+17		return 0;
+18	}
+19	
+(gdb) 
+Line number 20 out of range; test.c has 19 lines.
 (gdb) run
-Starting program: /home/Robert/test
-[New Thread 3956.0x14f0]
-[New Thread 3956.0x1d0]
-[New Thread 3956.0x1694]
-[New Thread 3956.0x1a08]
-[New Thread 3956.0x1c48]
+Starting program: /home/llp2/Documents/llp2/week04/test 
 
-Thread 1 "test" received signal SIGFPE, Arithmetic exception.
-0x004011e1 in f2 (age=43) at test.c:6
-6               age = age / test;
+Program received signal SIGFPE, Arithmetic exception.
+0x080483ec in f2 (age=43) at test.c:6
+6		age = age / test;
 (gdb) where
-#0  0x004011e1 in f2 (age=43) at test.c:6
-#1  0x00401207 in f1 (age=33) at test.c:11
-#2  0x0040122c in main (argc=1, argv=0x61cc6c) at test.c:16
+#0  0x080483ec in f2 (age=43) at test.c:6
+#1  0x08048410 in f1 (age=33) at test.c:11
+#2  0x0804842b in main (argc=1, argv=0xbffff0e4) at test.c:16
 (gdb) continue
 Continuing.
-      0 [main] test 3956 cygwin_exception::open_stackdumpfile: Dumping stack trace to test.exe.stackdump
-[Thread 3956.0x1c48 exited with code 34816]
-[Thread 3956.0x1a08 exited with code 34816]
-[Thread 3956.0x1694 exited with code 34816]
-[Inferior 1 (process 3956) exited with code 0104000]
-(gdb) quit
 
-Robert@DESKTOP ~
-$ gdb test
-GNU gdb (GDB) (Cygwin 7.11.1-2) 7.11.1
-Copyright (C) 2016 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
-and "show warranty" for details.
-This GDB was configured as "i686-pc-cygwin".
-Type "show configuration" for configuration details.
-For bug reporting instructions, please see:
-<http://www.gnu.org/software/gdb/bugs/>.
-Find the GDB manual and other documentation resources online at:
-<http://www.gnu.org/software/gdb/documentation/>.
-For help, type "help".
-Type "apropos word" to search for commands related to "word"...
+Program terminated with signal SIGFPE, Arithmetic exception.
+The program no longer exists.
+(gdb) gdb test
+Undefined command: "gdb".  Try "help".
+(gdb) gbb test
+Undefined command: "gbb".  Try "help".
+(gdb) quit
+llp2@ubuntu:~/Documents/llp2/week04$ gdb test
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+...
 Reading symbols from test...done.
 (gdb) break f2
-Breakpoint 1 at 0x4011d6: file test.c, line 5.
+Breakpoint 1 at 0x80483e1: file test.c, line 5.
 (gdb) run
-Starting program: /home/Robert/test
-[New Thread 6652.0x83c]
-[New Thread 6652.0x1cc8]
-[New Thread 6652.0x1d58]
-[New Thread 6652.0x1988]
-[New Thread 6652.0xb00]
+Starting program: /home/llp2/Documents/llp2/week04/test 
 
-Thread 1 "test" hit Breakpoint 1, f2 (age=43) at test.c:5
-5               int test = age-age;
+Breakpoint 1, f2 (age=43) at test.c:5
+5		int test = age-age;
 (gdb) step
-6               age = age / test;
+6		age = age / test;
 (gdb) info locals
 test = 0
-(gdb) set test = 1
+(gdb) set test=1
 (gdb) info locals
 test = 1
-(gdb) continue
+(gdb) continue 
 Continuing.
-[New Thread 6652.0x1ab8]
-[Thread 6652.0x1ab8 exited with code 0]
-[Thread 6652.0x1988 exited with code 0]
-[Thread 6652.0xb00 exited with code 0]
-[Thread 6652.0x1d58 exited with code 0]
-[Inferior 1 (process 6652) exited normally]
+[Inferior 1 (process 3803) exited normally]
 (gdb) quit
-
+llp2@ubuntu:~/Documents/llp2/week04$ 
