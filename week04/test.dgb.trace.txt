@@ -68,10 +68,6 @@ Continuing.
 
 Program terminated with signal SIGFPE, Arithmetic exception.
 The program no longer exists.
-(gdb) gdb test
-Undefined command: "gdb".  Try "help".
-(gdb) gbb test
-Undefined command: "gbb".  Try "help".
 (gdb) quit
 llp2@ubuntu:~/Documents/llp2/week04$ gdb test
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
