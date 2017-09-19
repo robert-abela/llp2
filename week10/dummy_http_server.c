@@ -51,18 +51,18 @@ int main( int argc, char *argv[] )
 
 		/* Clear buffer and start communicating */
 		memset(buffer, 0, BUFFER_SIZE);
-		num_bytes = read(newsockfd, buffer, BUFFER_SIZE-1);
+		num_bytes = recv(newsockfd, buffer, BUFFER_SIZE-1, 0);
 		if (num_bytes < 0) {
-			fprintf(stderr, "ERROR: read() failed\n");
+			fprintf(stderr, "ERROR: recv() failed\n");
 			return 5;
 		}
 		printf("Recieved: %s\n", buffer);
 
 		/* Write a response to the client */
 		printf("Sending: %s\n", DUMMY_RESPONSE);
-		num_bytes = write(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE));
+		num_bytes = send(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE), 0);
 		if (num_bytes < 0) {
-			fprintf(stderr, "ERROR: write() failed\n");
+			fprintf(stderr, "ERROR: send() failed\n");
 			return 6;
 		}
 

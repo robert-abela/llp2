@@ -14,18 +14,18 @@ void* handle_client(void *socket)
 	printf("----------\nThread %lu using socket %x\n", (unsigned long)thread_id, newsockfd);
 
 	/* Start communicating */
-	int num_bytes = read(newsockfd, buffer, BUFFER_SIZE-1);
+	int num_bytes = recv(newsockfd, buffer, BUFFER_SIZE-1, 0);
 	if (num_bytes < 0) {
-		fprintf(stderr, "Thread %lu ERROR: read() failed\n", (unsigned long)thread_id);
+		fprintf(stderr, "Thread %lu ERROR: recv() failed\n", (unsigned long)thread_id);
 		return NULL;
 	}
 	printf("Thread %lu recieved request\n", (unsigned long)thread_id);
 
 	/* Write a response to the client */
 	printf("Thread %lu sending response\n", (unsigned long)thread_id);
-	num_bytes = write(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE));
+	num_bytes = send(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE), 0);
 	if (num_bytes < 0) {
-		fprintf(stderr, "Thread %lu ERROR: write() failed\n", (unsigned long)thread_id);
+		fprintf(stderr, "Thread %lu ERROR: send() failed\n", (unsigned long)thread_id);
 		return NULL;
 	}
 

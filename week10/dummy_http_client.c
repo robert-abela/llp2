@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	printf("Sending: %s\n",buffer);
 
 	/* Send message to the server */
-	num_bytes = write(sockfd, buffer, strlen(buffer));
+	num_bytes = send(sockfd, buffer, strlen(buffer), 0);
 	if (num_bytes < 0) {
 		fprintf(stderr, "ERROR: Failed writing to socket\n");
 		return 4;
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	/* Now read server response (may require multiple reads)*/
 	do {
 		memset(buffer, 0, BUFFER_SIZE);
-		num_bytes = read(sockfd, buffer, BUFFER_SIZE-1);
+		num_bytes = recv(sockfd, buffer, BUFFER_SIZE-1, 0);
 		printf("%s",buffer);
 	} while (num_bytes > 0);
 	
