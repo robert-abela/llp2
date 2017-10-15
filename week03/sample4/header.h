@@ -1,4 +1,4 @@
-void test()
-{
+#include <stdio.h>
+void test() {
     printf("Hello World");
 }
