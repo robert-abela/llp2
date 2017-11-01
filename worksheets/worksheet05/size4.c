@@ -1,7 +1,8 @@
 #include <stdio.h> 
-int global; /* Uninitialized variable stored in BSS */
-int main(void)
+long global; /* Uninitialized variable stored in BSS */ 
+int main(void) 
 {
-	static int i = 100; /* Initialized static variable stored in DS */ 
-	return 0; 
+    /* Initialized static variable stored in Data segment */
+    static long i = 100;
+    return 0; 
 }
