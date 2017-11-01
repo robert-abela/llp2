@@ -1,8 +1,6 @@
-all: default_stack large_stack
+all: stack
 
-default_stack:
-	gcc -Wall -o default stack_test.c
-large_stack:
-	gcc -Wall -Wl,--stack,10240000 -o large stack_test.c
+stack:
+	gcc -Wall -Wno-unused-variable -o stack stack_test.c
 clean:
-	-rm default large
+	-rm stack

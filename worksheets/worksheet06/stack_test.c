@@ -2,7 +2,7 @@
  
 void recurse(int level) 
 { 
-    char arry[1024]; 
+    char arry[10240]; 
     printf("%d\n", level); 
     recurse(level+1); 
 } 
