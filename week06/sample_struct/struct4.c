@@ -32,10 +32,10 @@ int main()
 	struct char_car_struct c_car1;
 	struct packed_car_struct p_car1;
 
-	printf("size of int_car_struct:    %d\n", sizeof(i_car1));
-	printf("size of bool_car_struct:   %d\n", sizeof(b_car1));
-	printf("size of char_car_struct:   %d\n", sizeof(c_car1));
-	printf("size of packed_car_struct: %d\n", sizeof(p_car1));
+	printf("size of int_car_struct:    %ld\n", sizeof(i_car1));
+	printf("size of bool_car_struct:   %ld\n", sizeof(b_car1));
+	printf("size of char_car_struct:   %ld\n", sizeof(c_car1));
+	printf("size of packed_car_struct: %ld\n", sizeof(p_car1));
     
     return 0; 
 } 
