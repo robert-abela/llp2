@@ -10,7 +10,7 @@ int main()
 {
    union my_union my_data;        
 
-   printf("size of my_data : %d\n", sizeof(my_data));
+   printf("size of my_data : %ld\n", sizeof(my_data));
 
    return 0;
 }
