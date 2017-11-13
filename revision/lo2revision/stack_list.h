@@ -28,7 +28,7 @@ void push_item(struct item** head_ref, int new_value)
     ;
 }
 
-/* Add an item at the begining of a linked list */
+/* Remove an item at the begining of a linked list */
 void pop_item(struct item** head_ref)
 {
     ;
