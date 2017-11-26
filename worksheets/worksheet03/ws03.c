@@ -50,11 +50,6 @@ person* get_person_at_index(int index) {
     return  NULL;
 }
 
-/* Removes a person record from the list */
-bool remove_from_list(person* p) {
-    return true;
-}
-
 /* Remove a person from list and free memory. Return true if successful */
 bool remove_person(person* p) {
     return true;
