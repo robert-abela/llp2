@@ -80,7 +80,7 @@ int count_list_size() {
 void add_person_at_index(person* new_person, int index) {
 }
 
-/* Search the list for a particular name */
+/* Search the list for a particular name, return NULL if not found */
 person* search_by_name(const char* name) {
     return NULL;
 }
