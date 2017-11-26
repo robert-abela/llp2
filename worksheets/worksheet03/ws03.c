@@ -31,7 +31,7 @@ void set_list_head(person* new_head) {
 //    | '_ \ / _` / __| |/ __|
 //    | |_) | (_| \__ \ | (__ 
 //    |_.__/ \__,_|___/_|\___|
-                        
+
 /* Finds the last allocation entry in list, or returns NULL if list is empty */
 person* find_last() {
     return NULL;
@@ -75,7 +75,7 @@ int count_list_size() {
 //     / _` |/ _` \ \ / / _` | '_ \ / __/ _ \/ _` |
 //    | (_| | (_| |\ V / (_| | | | | (_|  __/ (_| |
 //     \__,_|\__,_| \_/ \__,_|_| |_|\___\___|\__,_|
-                                             
+
 /* Add a person to the list at a specific index */
 void add_person_at_index(person* new_person, int index) {
 }
@@ -106,10 +106,10 @@ void generate_persons(int amount) {
 }
 
 int main (int argc, char *argv[]) {
-	/*
-	//confirm that the list is empty when we start
-	assert (count_list_size() == 0);
-    
+    /*
+    //confirm that the list is empty when we start
+    assert (count_list_size() == 0);
+
     //generate 10 persons and check that the count is 10
     generate_persons(10);
     assert (count_list_size() == 10);
@@ -123,13 +123,13 @@ int main (int argc, char *argv[]) {
     assert (last->yob == 2009);
 
     //remove last person and confirm it was successful
-	assert (remove_person_at_index(9) == true);
-	assert (count_list_size() == 9);
+    assert (remove_person_at_index(9) == true);
+    assert (count_list_size() == 9);
 
-	//free list and confirm count is zero
+    //free list and confirm count is zero
     free_list();
     assert (count_list_size() == 0);
-	*/
+    */
     
     return 0;
 }
