@@ -8,7 +8,8 @@
 void* handle_client(void *socket)
 {
 	char buffer[BUFFER_SIZE] = {0};
-	int newsockfd = (int)socket;
+	int* newsockfd_ptr = (int*)socket;
+	int newsockfd = *newsockfd_ptr;
 	pthread_t thread_id = pthread_self();
 
 	printf("----------\nThread %lu using socket %x\n", (unsigned long)thread_id, newsockfd);
@@ -74,7 +75,7 @@ int main( int argc, char *argv[] )
 			return 4;
 		}
 
-		thread_res = pthread_create(&mythread, NULL, handle_client, (void*)newsockfd);
+		thread_res = pthread_create(&mythread, NULL, handle_client, &newsockfd);
 		if (thread_res != 0)
 		{
 			fprintf(stderr, "ERROR: pthread_create() failed\n");
