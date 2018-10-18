@@ -1,5 +1,6 @@
 llp2@ubuntu:~/Documents/llp2/week04$ ls
 makefile  test2.c  test.c  test.dgb.trace.txt
+
 llp2@ubuntu:~/Documents/llp2/week04$ make
 rm test test2
 rm: cannot remove 'test': No such file or directory
@@ -8,12 +9,16 @@ makefile:8: recipe for target 'clean' failed
 make: [clean] Error 1 (ignored)
 gcc -Wall -g -o0 -o test test.c
 gcc -Wall -g -o0 -o test2 test2.c
+
 llp2@ubuntu:~/Documents/llp2/week04$ ls
 makefile  test  test2  test2.c  test.c  test.dgb.trace.txt
+
 llp2@ubuntu:~/Documents/llp2/week04$ ./test
 Floating point exception (core dumped)
+
 llp2@ubuntu:~/Documents/llp2/week04$ ls
 core  makefile  test  test2  test2.c  test.c  test.dgb.trace.txt
+
 llp2@ubuntu:~/Documents/llp2/week04$ gdb test
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
 Copyright (C) 2016 Free Software Foundation, Inc.
@@ -69,6 +74,7 @@ Continuing.
 Program terminated with signal SIGFPE, Arithmetic exception.
 The program no longer exists.
 (gdb) quit
+
 llp2@ubuntu:~/Documents/llp2/week04$ gdb test
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
 ...
@@ -91,4 +97,5 @@ test = 1
 Continuing.
 [Inferior 1 (process 3803) exited normally]
 (gdb) quit
+
 llp2@ubuntu:~/Documents/llp2/week04$ 
