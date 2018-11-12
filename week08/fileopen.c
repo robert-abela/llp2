@@ -3,10 +3,11 @@
 int main(void)
 {
 	FILE *fp = fopen("file.txt", "r");
-	if (fp == NULL) 
+	if (fp == NULL) {
 		fprintf(stderr, "Can't open input file in.list!\n");
-	else 
+	}
+	else {
 		fprintf(stdout, "Successfully opened file!\n");
-
-	fclose(fp);
+		fclose(fp);
+	}
 }
