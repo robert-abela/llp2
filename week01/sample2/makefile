@@ -6,4 +6,4 @@ main.o: main.c
 hello_fn.o: hello_fn.c
 	gcc -Wall -c hello_fn.c
 clean:
-	rm *.o newhello
+	-rm *.o newhello
