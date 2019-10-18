@@ -1,23 +1,21 @@
 llp2@ubuntu:~/Documents/llp2/week04$ ls
-makefile  test2.c  test.c  test.dgb.trace.txt
+makefile  practical  test.c  test.dgb.trace.txt
 
 llp2@ubuntu:~/Documents/llp2/week04$ make
-rm test test2
+rm test 
 rm: cannot remove 'test': No such file or directory
-rm: cannot remove 'test2': No such file or directory
 makefile:8: recipe for target 'clean' failed
 make: [clean] Error 1 (ignored)
 gcc -Wall -g -o0 -o test test.c
-gcc -Wall -g -o0 -o test2 test2.c
 
 llp2@ubuntu:~/Documents/llp2/week04$ ls
-makefile  test  test2  test2.c  test.c  test.dgb.trace.txt
+makefile  test  practical  test.c  test.dgb.trace.txt
 
 llp2@ubuntu:~/Documents/llp2/week04$ ./test
 Floating point exception (core dumped)
 
 llp2@ubuntu:~/Documents/llp2/week04$ ls
-core  makefile  test  test2  test2.c  test.c  test.dgb.trace.txt
+core  makefile  test  practical  test.c  test.dgb.trace.txt
 
 llp2@ubuntu:~/Documents/llp2/week04$ gdb test
 GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
