@@ -10,4 +10,6 @@ int main(void)
 		fprintf(stdout, "Successfully opened file!\n");
 		fclose(fp);
 	}
+	
+	return 0;
 }
