@@ -1,4 +1,6 @@
-all: check_posix  thread_example thread_params_example thread_return
+all: check_posix thread_example thread_params_example thread_return
+
+rebuild: clean all
 
 check_posix:
 	gcc -Wall -o check_posix check_posix.c
