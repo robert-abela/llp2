@@ -1,0 +1,56 @@
+Create a VM using latest xubuntu LTS (and create an account named llp2)
+
+Step 1: Update Xubuntu
+sudo apt update && sudo apt upgrade
+
+Step 2: Install the default JDK
+sudo apt-get install default-jdk
+
+Step 3.1: Install Eclipse
+- Go to https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-cc-developers
+- Download Eclipse for Linux 64-bit
+- Extract contents to /home/llp2/eclipse
+
+Step 3.2: Create eclipse shortcut
+cd /usr/bin
+sudo ln -s /home/llp2/eclipse/eclipse
+
+Create a /usr/share/applications/eclipse.desktop file with the following contents:
+
+[Desktop Entry]
+Name=Eclipse 
+Type=Application
+Exec=eclipse
+Terminal=false
+Icon=/home/llp2/eclipse/icon.xpm
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse
+
+Step 4: Install Visual Studio Code
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+
+Step 5: Install Chrome
+sudo apt-get install chromium-browser
+
+Step 6: Install development tools
+sudo apt-get install gcc
+sudo apt-get install make
+sudo apt-get install gdb
+sudo apt-get install git
+
+Step 7: Clone git repository
+mkdir /home/llp2/git/
+cd /home/llp2/git/
+git clone https://github.com/robert-abela/llp2
+
+Step 8: Remove bloat
+sudo apt remove pidgin
+sudo apt remove gnome-mines
+sudo apt remove gnome-sudoku
+sudo apt remove sgt-puzzles
