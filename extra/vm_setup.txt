@@ -43,6 +43,7 @@ sudo apt-get install gcc
 sudo apt-get install make
 sudo apt-get install gdb
 sudo apt-get install git
+sudo apt-get install g++
 
 Step 7: Clone git repository
 mkdir /home/llp2/git/
