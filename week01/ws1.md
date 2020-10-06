@@ -1,6 +1,6 @@
 # WS01: Revision of C basics
 
-Write C programs to perform the following tasks. 
+Write C programs to perform the following tasks:
 1. Use ```scanf()``` to read two numbers from the user. Work out their sum, average and sum of the squares of the numbers.
 2. Create a structure to hold details of a person (at least 4 fields). Create a program to read a person’s input and print out the details.
 3. Write a program that reads 10 numbers, stores them in an array and print the largest.
