@@ -1,4 +1,4 @@
-# Learning outcome 1 revision
+# Learning Outcome 1 Revision
 ## 1.1 Arrange the operation of a multi-source file compilation
 Write a program (```lo1.c```) that reads a line of text from the user and calculates the number of words entered. If executed with the command line argument __–c__ the number of characters should also be counted. Example usage:
 
