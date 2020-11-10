@@ -1,0 +1,5 @@
+# Ignore all files without extension
+!*_binary
+!*_core
+!Makefile*
+
