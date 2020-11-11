@@ -40,10 +40,6 @@ Conditional compilation (#ifdef) should be used for this task. The makefile shou
 * __counter__ (normal version) and 
 * __counter2__ (extended version)
 
-## 1.6 Evaluate functionality of multi-source code using a debug toolchain 
-For this course you are expected to know how to use a debugger of your choice.  
-Mention at least two instances where a debugger was useful while doing this task.
-
 ## 1.4 Construct a multi-source tool-chain for a given device 
 Finally you are to extend your makefile further to allow for debug and release builds of both program versions. The debug versions will be used by developers while the release versions will be used for customer devices.
 The difference between debug and release versions stands in the flags passed to GCC
@@ -65,3 +61,14 @@ lo1_revision/
     |- counter2
 ```
 Check the size of the debug and release executables. Take note of the difference the flags make.
+
+## 1.6 Evaluate functionality of multi-source code using a debug toolchain 
+For this course you are expected to know how to use a debugger of your choice.  
+Mention at least two instances where a debugger was useful while doing this task.
+
+A number of programs with their respective core dumps can be found at: [\llp2\revision\lo1revision\crashes](https://github.com/robert-abela/llp2/tree/master/revision/lo1revision/crashes). Load each pair of files (e.g. one_binary and one_core) in gdb and answer the following questions:
+
+* What line number of the program code was executed last?
+* Generate a stack trace of the execution at the time the core dump was created.
+* How many command line arguments were passed when the program was executed?
+* Explain what caused the core dump to be created
