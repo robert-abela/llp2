@@ -1,4 +1,6 @@
 # Ignore all files without extension
+*
+!*.c
 !*_binary
 !*_core
 !Makefile*
