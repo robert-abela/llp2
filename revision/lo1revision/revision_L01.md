@@ -34,7 +34,7 @@ The default target should be rebuild
 ## 1.5 Examine typical usage of conditional compilation within a program 
 Extend your program to have two versions of the executable:
 * Normal: read only one line of text
-* Extended: keep reading line after line until Ctrl+C is entered.
+* Extended: keep reading line after line forever.
 
 Conditional compilation (#ifdef) should be used for this task. The makefile should be updated to produce two outputs: 
 * __counter__ (normal version) and 
