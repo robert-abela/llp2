@@ -71,4 +71,4 @@ A number of programs with their respective core dumps can be found at: [\llp2\re
 * What line number of the program code was executed last?
 * Generate a stack trace of the execution at the time the core dump was created.
 * How many command line arguments were passed when the program was executed?
-* Explain what caused the core dump to be created
+* Explain what caused the core dump to be created.
