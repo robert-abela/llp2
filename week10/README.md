@@ -28,40 +28,40 @@ We will be using the following command: ```netstat -all | grep port``` with the 
 
 ## Simulation commands
 
-Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```. This should not produce any output.
+1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```. This should not produce any output.
 
-Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```. Again there should be no output.
+1. Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```. Again there should be no output.
 
-Go back to the monitoring terminal. Running the command again should produce the following:
-```
-$ netstat -a | grep 9999
-tcp        0      0 0.0.0.0:9999            0.0.0.0:*               LISTEN 
-```
-This means that a TCP server is listening for connections on port 9999 from any network card available. 
+1. Go back to the monitoring terminal. Running the command again should produce the following:
+   ```
+   $ netstat -a | grep 9999
+   tcp        0      0 0.0.0.0:9999            0.0.0.0:*               LISTEN 
+   ```
+   This means that a TCP server is listening for connections on port 9999 from any network card available. 
 
-Open a third terminal window, set its title to **Client** and run the following command ``` nc localhost 9999```.  This should agiain not produce any output.
+1. Open a third terminal window, set its title to **Client** and run the following command ``` nc localhost 9999```.  This should agiain not produce any output.
 
-Go back to the monitoring terminal. Running the command again should produce the following:
-```
-$ netstat -a | grep 9999
-tcp        0      0 0.0.0.0:9999            0.0.0.0:*               LISTEN     
-tcp        0      0 localhost:47874         localhost:9999          ESTABLISHED
-tcp        0      0 localhost:9999          localhost:47874         ESTABLISHED
-```
-This means that a TCP server is still listening, but a connection has now been established between the client and the server (server_port = 9999, client_port = 47874). THe client port is assigned by random by the OS, so your number will likely be different but it doesn't matter.
+1. Go back to the monitoring terminal. Running the command again should produce the following:
+   ```
+   $ netstat -a | grep 9999
+   tcp        0      0 0.0.0.0:9999            0.0.0.0:*               LISTEN     
+   tcp        0      0 localhost:47874         localhost:9999          ESTABLISHED
+   tcp        0      0 localhost:9999          localhost:47874         ESTABLISHED
+   ```
+   This means that a TCP server is still listening, but a connection has now been established between the client and the server (server_port = 9999, client_port = 47874). The client port is assigned by random by the OS, so your number will likely be different but it doesn't matter.
 
-Switch to the client terminal, type some text and press Enter. This text will be sent to the server. 
+1. Switch to the client terminal, type some text and press Enter. This text will be sent to the server. 
 
-Switch to the server terminal and you will see the text recieved from the client. Now type some text (followed by Enter) on the server terminal and it will be sent to the client.
+1. Switch to the server terminal and you will see the text recieved from the client. Now type some text (followed by Enter) on the server terminal and it will be sent to the client.
 
-Switch to the client terminal again, and you will see the text recieved from the server. Now press Ctrl+C to stop the client (the server will also stop running)
+1. Switch to the client terminal again, and you will see the text recieved from the server. Now press Ctrl+C to stop the client (the server will also stop running)
 
-Finally switch to the monitoring terminal. Running the usual command again should produce the following:
-```
-$ netstat -a | grep 9999
-tcp        0      0 localhost:47874         localhost:9999          TIME_WAIT 
-``` 
-This means that the established connection has been closed and the server is no longer listening. The OS is waiting for some time to pass before fully closing the server port (because it was not closed properly).
+1. Finally switch to the monitoring terminal. Running the usual command again should produce the following:
+   ```
+   $ netstat -a | grep 9999
+   tcp        0      0 localhost:47874         localhost:9999          TIME_WAIT 
+   ``` 
+   This means that the established connection has been closed and the server is no longer listening. The OS is waiting for some time to pass before fully closing the server port (because it was not closed properly).
 
 __Original Article__: 
 * https://ubidots.com/blog/how-to-simulate-a-tcpudp-client-using-netcat/
