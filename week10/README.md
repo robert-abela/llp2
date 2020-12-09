@@ -28,10 +28,10 @@ We will be using the following command: ```netstat -all | grep port``` with the 
 
 ## Simulation commands
 
-1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```. 
+1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```.  
    This should not produce any output.
 
-1. Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```.
+1. Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```.  
    Again there should be no output.
 
 1. Go back to the monitoring terminal. Running the command again should produce the following:
