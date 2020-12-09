@@ -68,5 +68,5 @@ We will be using the following command: ```netstat -all | grep port``` with the 
    ``` 
    This means that the established connection has been closed and the server is no longer listening. The OS is waiting for some time to pass before fully closing the server port (because it was not closed properly).
 
-__Original Article__: 
+__Reference__: 
 * https://ubidots.com/blog/how-to-simulate-a-tcpudp-client-using-netcat/
