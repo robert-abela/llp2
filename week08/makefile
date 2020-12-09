@@ -1,4 +1,4 @@
-all: fileopen fileread filewrite
+all: clean fileopen fileread filewrite
 
 fileopen:
 	gcc -Wall -o fileopen fileopen.c
