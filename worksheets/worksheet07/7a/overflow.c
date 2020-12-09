@@ -12,7 +12,7 @@ int main(void)
 	printf("Enter password: ");
 	gets(buffer);
 	
-	if (strcmp(buffer, "letmein") == 0)
+    if (strncmp(buffer, "letmein", 7) == 0)
 		correct_password = TRUE;
 	else
 		printf ("Incorrect Password!\n");
