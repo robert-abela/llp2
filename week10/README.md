@@ -28,10 +28,10 @@ We will be using the following command: ```netstat -all | grep port``` with the 
 
 ## Simulation commands
 
-1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```.  
+1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```  
    This should not produce any output.
 
-1. Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```.  
+1. Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```  
    Again there should be no output.
 
 1. Go back to the monitoring terminal. Running the command again should produce the following:
@@ -41,7 +41,7 @@ We will be using the following command: ```netstat -all | grep port``` with the 
    ```
    This means that a TCP server is listening for connections on port 9999 from any network card available. 
 
-1. Open a third terminal window, set its title to **Client** and run the following command ``` nc localhost 9999```.  
+1. Open a third terminal window, set its title to **Client** and run the following command: ``` nc localhost 9999```  
    This should agiain not produce any output.
 
 1. Go back to the monitoring terminal. Running the command again should produce the following:
