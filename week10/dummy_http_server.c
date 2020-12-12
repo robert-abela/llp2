@@ -17,7 +17,14 @@ int main( int argc, char *argv[] )
 	sockfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (sockfd < 0) {
 		fprintf(stderr, "ERROR: Failed to open socket\n");
-		return 1;
+		return -1;
+	}
+
+	/* allow to reuse the socker as soon as it stops being active */
+	int so_reuse_enabled = 1;
+	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &so_reuse_enabled, sizeof(int)) < 0) {
+    	fprintf(stderr, "setsockopt(SO_REUSEADDR) failed");
+		return -2;
 	}
 
 	/* Initialize socket structure (sockarrd_in) */
@@ -30,14 +37,14 @@ int main( int argc, char *argv[] )
 	if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
 		fprintf(stderr, "ERROR: bind() failed\n");
 		fprintf(stderr, "Error code: %s\n", strerror(errno));
-		return 2;
+		return -3;
 	}
 
 	/* Start listening for the clients (thread blocks) */
 	if (listen(sockfd, MAX_CONNECTIONS) < 0) {
 		fprintf(stderr, "ERROR: listen() failed\n");
 		fprintf(stderr, "Error code: %s\n", strerror(errno));
-		return 3;
+		return -4;
 	}
 
 	//for (;;)
@@ -46,7 +53,7 @@ int main( int argc, char *argv[] )
 		newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
 		if (newsockfd < 0) {
 			fprintf(stderr, "ERROR: accept() failed\n");
-			return 4;
+			return -5;
 		}
 
 		/* Clear buffer and start communicating */
@@ -54,7 +61,7 @@ int main( int argc, char *argv[] )
 		num_bytes = recv(newsockfd, buffer, BUFFER_SIZE-1, 0);
 		if (num_bytes < 0) {
 			fprintf(stderr, "ERROR: recv() failed\n");
-			return 5;
+			return -6;
 		}
 		printf("Recieved: %s\n", buffer);
 
@@ -63,11 +70,13 @@ int main( int argc, char *argv[] )
 		num_bytes = send(newsockfd, DUMMY_RESPONSE, strlen(DUMMY_RESPONSE), 0);
 		if (num_bytes < 0) {
 			fprintf(stderr, "ERROR: send() failed\n");
-			return 6;
+			return -7;
 		}
 
 		close(newsockfd);
 	//}
+
+	close(sockfd);
 
 	return 0;
 }
