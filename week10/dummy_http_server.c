@@ -20,7 +20,7 @@ int main( int argc, char *argv[] )
 		return -1;
 	}
 
-	/* allow to reuse the socker as soon as it stops being active */
+	/* allow to reuse the socket as soon as it stops being active */
 	int so_reuse_enabled = 1;
 	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &so_reuse_enabled, sizeof(int)) < 0) {
     	fprintf(stderr, "setsockopt(SO_REUSEADDR) failed");
