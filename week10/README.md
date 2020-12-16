@@ -21,13 +21,13 @@ We will be using the following command: ```nc host port``` with the command line
 *  port: the local port the server is listening on, e.g. **9999**
 
 ### Netstat (monitoring)
-We will be using the following command: ```netstat -all | grep port``` with the command line arguments being:
-* -all: display sockets in all the states (not just connected)
+We will be using the following command: ```netstat -tan | grep :port``` with the command line arguments being:
+* -tan: display TCP sockets in all the states (not just connected) in humeric format (80 instead of http)
 * | grep port: print only the lines that have a specific port number in them, e.g. **| grep 9999** (the port we will be monitoring)
 
 
 ## Simulation commands
-1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -a | grep 9999```  
+1. Open a terminal window, set its title to **Monitoring** (Menu Terminal > Set Title...) and run the following command: ```netstat -tan | grep :9999```  
    This should not produce any output.
 
 1. Open another terminal window, set its title to **Server** and run the following command: ```nc -l -p 9999```  
@@ -35,7 +35,7 @@ We will be using the following command: ```netstat -all | grep port``` with the 
 
 1. Go back to the monitoring terminal. Running the command again should produce the following:
    ```
-   $ netstat -a | grep 9999
+   $ netstat -tan | grep :9999
    tcp        0      0 0.0.0.0:9999            0.0.0.0:*               LISTEN 
    ```
    This means that a TCP server is listening for connections on port 9999 from any network card available. 
@@ -45,7 +45,7 @@ We will be using the following command: ```netstat -all | grep port``` with the 
 
 1. Go back to the monitoring terminal. Running the command again should produce the following:
    ```
-   $ netstat -a | grep 9999
+   $ netstat -tan | grep :9999
    tcp        0      0 0.0.0.0:9999            0.0.0.0:*               LISTEN     
    tcp        0      0 localhost:47874         localhost:9999          ESTABLISHED
    tcp        0      0 localhost:9999          localhost:47874         ESTABLISHED
@@ -62,7 +62,7 @@ We will be using the following command: ```netstat -all | grep port``` with the 
 
 1. Finally switch to the monitoring terminal. Running the usual command again should produce the following:
    ```
-   $ netstat -a | grep 9999
+   $ netstat -tan | grep :9999
    tcp        0      0 localhost:47874         localhost:9999          TIME_WAIT 
    ``` 
    This means that the established connection has been closed and the server is no longer listening. The OS is waiting for some time to pass before fully closing the server port (because it was not closed properly).
