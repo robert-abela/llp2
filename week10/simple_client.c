@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
     
     printf("Data sent successfully \n");
 
-    /* normally you wount want to put recv() in a loop */    
+    /* normally you would put recv() in a loop */    
     numbytes = recv(sockfd, buf, MAX_DATA_SIZE, 0);
     if (numbytes == -1) {
         printf("recv() failed\n");
