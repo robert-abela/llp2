@@ -1,4 +1,4 @@
-Create a VM using latest xubuntu LTS (and create an account named llp2)
+Create a VM using latest LTS of your preferred Linux
 
 Step 1: Update Xubuntu
 sudo apt update && sudo apt upgrade
@@ -33,7 +33,7 @@ Optional Step 2: Install Eclipse
 
 Optional Step 3: Create eclipse shortcut
 cd /usr/bin
-sudo ln -s /home/llp2/eclipse/eclipse
+sudo ln -s ~/eclipse/eclipse
 
 Create a /usr/share/applications/eclipse.desktop file with the following contents:
 
@@ -42,7 +42,7 @@ Name=Eclipse
 Type=Application
 Exec=eclipse
 Terminal=false
-Icon=/home/llp2/eclipse/icon.xpm
+Icon=~/eclipse/icon.xpm
 Comment=Integrated Development Environment
 NoDisplay=false
 Categories=Development;IDE;
