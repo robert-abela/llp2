@@ -39,11 +39,7 @@ Step 5: Install Chrome
 sudo apt-get install chromium-browser
 
 Step 6: Install development tools
-sudo apt-get install gcc
-sudo apt-get install make
-sudo apt-get install gdb
-sudo apt-get install git
-sudo apt-get install g++
+sudo apt-get install gcc make gdb git g++
 
 Step 7: Clone git repository
 mkdir /home/llp2/git/
