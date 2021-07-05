@@ -17,8 +17,8 @@ Step 4: Install development tools
 sudo apt-get install gcc make gdb git g++
 
 Step 5: Clone git repository
-mkdir /home/llp2/git/
-cd /home/llp2/git/
+mkdir ~/git/
+cd ~/git/
 git clone https://github.com/robert-abela/llp2
 
 -----------------
