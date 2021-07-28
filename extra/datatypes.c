@@ -25,9 +25,9 @@ int main() {
     four_bytes = 555222;
     one_byte = four_bytes; //no warning!
 
-    one_byte  =          55; //max 128
-    two_bytes =        5555; //max 32,767
-    four_bytes =    5555555; //max 2,147,483,647
+    one_byte    =        55; //max 128
+    two_bytes   =      5555; //max 32,767
+    four_bytes  =   5555555; //max 2,147,483,647
     eight_bytes = 555555555; //max very large!
 
     printf("original %d\n", one_byte);
