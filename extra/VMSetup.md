@@ -4,9 +4,9 @@
 It is suggested to create a VM using latest LTS of your preferred Linux. I use [Zorin 16](https://zorin.com/os/download/16/core/), MCAST uses [xubuntu](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/20.04/release/). Any Linux is fine really, ideally pick from [Debian family](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based).
 
 If you need VM software, you can use:
-- VMWare Pro (ask me for a license, don't pirate software!)
-- VMWare Player
-- VirtualBox
+- [VMWare Pro (trial)](https://www.vmware.com/go/getworkstation-win) - ask me for a license, don't pirate software!
+- [VMWare Player (free)](https://www.vmware.com/go/getplayer-win)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - use this if your computer does not like VMWare.
 
 ## Step 1: Update Linux
     sudo apt update && sudo apt upgrade
