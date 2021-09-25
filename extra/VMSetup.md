@@ -11,7 +11,7 @@ If you need VM software, you can use:
 - VMWare Player
 - VirtualBox
 
-## Step 1: Update Xubuntu
+## Step 1: Update Linux
     sudo apt update && sudo apt upgrade
 
 ## Step 2: Install Visual Studio Code
