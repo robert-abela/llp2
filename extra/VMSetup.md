@@ -34,15 +34,15 @@ If you need VM software, you can use:
 
 ## Optional Steps
 
-# Optional Step 1: Install the default JDK
+### Optional Step 1: Install the default JDK
     sudo apt-get install default-jdk
 
-# Optional Step 2: Install Eclipse
+### Optional Step 2: Install Eclipse
 - Go to https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-cc-developers
 - Download Eclipse for Linux 64-bit
 - Extract contents to /home/llp2/eclipse
 
-# Optional Step 3: Create eclipse shortcut
+### Optional Step 3: Create eclipse shortcut
     cd /usr/bin
     sudo ln -s ~/eclipse/eclipse
 
