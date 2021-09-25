@@ -35,9 +35,9 @@ If you need VM software, you can use:
     sudo apt-get install default-jdk
 
 ### Optional Step 2: Install Eclipse
-- Go to https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-cc-developers
+- [Go to Eclipse for C/C++](https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-cc-developers)
 - Download Eclipse for Linux 64-bit
-- Extract contents to /home/llp2/eclipse
+- Extract contents to ``/home/student/eclipse``
 
 ### Optional Step 3: Create eclipse shortcut
     cd /usr/bin
