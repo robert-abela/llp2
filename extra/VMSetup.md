@@ -5,7 +5,7 @@ It is suggested to create a VM using latest LTS of your preferred Linux. I use [
 
 If you need VM software, you can use:
 - [VMWare Pro (trial)](https://www.vmware.com/go/getworkstation-win) - ask me for a license, don't pirate software!
-- [VMWare Player (free)](https://www.vmware.com/go/getplayer-win)
+- [VMWare Player (free)](https://www.vmware.com/go/getplayer-win) - some limitations (e.g. no snapshots)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - use this if your computer does not like VMWare.
 
 ## Step 1: Update Linux
