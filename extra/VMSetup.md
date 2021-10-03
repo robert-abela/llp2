@@ -1,7 +1,7 @@
 # Systems Programming Linux Setup
 
 ## Step 0: Get a Linux running
-It is suggested to create a VM using latest LTS of your preferred Linux. I use [Zorin](https://zorin.com/os/download/16/core/), MCAST uses [xubuntu](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/20.04/release/). Any Linux is fine really, ideally pick from [Debian family](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based).
+It is suggested to create a VM using latest LTS of your preferred Linux. I use [Zorin](https://zorin.com/os/download/16/core/), MCAST uses [Xubuntu](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/20.04/release/). Any Linux is fine really, ideally pick from [Debian family](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based).
 
 If you need VM software, you can use:
 - [VMWare Pro (trial)](https://www.vmware.com/go/getworkstation-win) - ask me for a license, don't pirate software!
