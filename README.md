@@ -3,6 +3,8 @@ This is the companian repository for Systems Programming (ITSYS-506-2005) course
 It was previosly known as: Low Level Programming 2 (llp2)
 
 The course is planned over 10 weeks of new content, with the remaining weeks dedicated to worksheets, assessment and practice:
+
+0. [Linux Setup](/extra/VMSetup.md)
 1. [Build toolchain](/week01)
 1. [Makefiles](/week02)
 1. [Precompiler](/week03)
