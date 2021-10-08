@@ -39,7 +39,7 @@ If you need VM software, you can use:
 - Download Eclipse for Linux 64-bit
 - Extract contents to ``/home/student/eclipse``
 
-### Optional Step 3: Create eclipse shortcut
+#### Optional Step 3.1: Create eclipse shortcut
     cd /usr/bin
     sudo ln -s ~/eclipse/eclipse
 
