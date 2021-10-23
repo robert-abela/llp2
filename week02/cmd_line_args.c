@@ -4,7 +4,7 @@ int main( int argc, char *argv[] )  {
 
 	printf("Program name %s\n", argv[0]);
 
-	if( argc == 1 ) {
+	if (argc == 1) {
 		printf("No arguments supplied\n");
 		return -1;
 	}
