@@ -1,8 +1,7 @@
 #include "header.h"
 #include "header.h"
 
-int main()
-{
+int main(void) {
 	test();
 	return 0;
 }

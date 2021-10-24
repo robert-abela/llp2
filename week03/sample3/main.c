@@ -6,8 +6,7 @@
    #error only windows and linux supported
 #endif
 
-int main (void)
-{
-  hello();
-  return 0;
+int main (void) {
+   hello();
+   return 0;
 }
