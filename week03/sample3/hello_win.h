@@ -2,9 +2,8 @@
 #define HELLO_WIN_H_INCLUDED
 #include <stdio.h>
 
-void hello()
-{
-  printf ("Hello Windows!\n");
+void hello() {
+  printf("Hello Windows!\n");
 }
 
 #endif //HELLO_WIN_H_INCLUDED

@@ -3,9 +3,8 @@
 
 #include <stdio.h>
 
-void hello()
-{
-  printf ("Hello Linux!\n");
+void hello() {
+  printf("Hello Linux!\n");
 }
 
 #endif //HELLO_LNX_H_INCLUDED
