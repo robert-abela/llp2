@@ -48,16 +48,16 @@ Implement and LIFO structure (just like the stack works) twice:
 **Using an array**
 
 Start from the following files:
-* revision\lo2revision\use_array.c
-* revision\lo2revision\stack_array.h
+* [revision\lo2revision\use_array.c](use_array.c)
+* [revision\lo2revision\stack_array.h](stack_array.h)
 
 Using the variables and the macros defined in the header, add a body to the four functions using the comments as a guideline. Once ready the C file should be fully functional; use it to test your code.
 
 **Using a linked list**
 
 Start from the following files:
-- revision\lo2revision\use_list.c
-- revision\lo2revision\stack_list.h
+- [revision\lo2revision\use_list.c](use_list.c)
+- [revision\lo2revision\stack_list.h](stack_list.h)
 
 Using ```struct item``` declared in the header for each item in the linked list, you are to add a body to the five functions using the comments as a guideline. Another two functions in the C file require that you implement a body for them. Once ready use the code already present in the main function as a way to test your implementation.
 
