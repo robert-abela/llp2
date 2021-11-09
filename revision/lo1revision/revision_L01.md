@@ -66,7 +66,7 @@ Check the size of the debug and release executables. Take note of the difference
 For this course you are expected to know how to use a debugger of your choice.  
 Mention at least two instances where a debugger was useful while doing this task.
 
-A number of programs with their respective core dumps can be found at: [\llp2\revision\lo1revision\crashes](https://github.com/robert-abela/llp2/tree/master/revision/lo1revision/crashes). Load each pair of files (e.g. one_binary and one_core) in gdb and answer the following questions:
+A number of programs with their respective core dumps can be found at: [revision\lo1revision\crashes](crashes). Load each pair of files (e.g. one_binary and one_core) in gdb and answer the following questions:
 
 * What line number of the program code was executed last?
 * Generate a stack trace of the execution at the time the core dump was created.
