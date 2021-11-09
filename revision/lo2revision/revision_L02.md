@@ -73,7 +73,7 @@ struct sss {
   char y;
 };
 ```
-Outline one specific use case where you would prefer to use a union instead of a struct.
+Outline one specific use case where you would prefer to use a ```union``` instead of a ```struct```.
 
 ## 2.4 Evaluate the type of program memory management required for a given use-case (structured static or dynamically allocated) 
 
