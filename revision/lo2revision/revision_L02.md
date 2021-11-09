@@ -122,7 +122,7 @@ Tasks:
 
 Final exercise:
 - Write a new program that takes a number as a command line argument
-- The program creates two int arrays one on the stack and the other in the heap
+- The program creates two ```int``` arrays one on the stack and the other in the heap
 - Each should hold an amount of values as specified in the command line argument
 - Fill both arrays with random values between 0 and 1024
 - Print out the two arrays
