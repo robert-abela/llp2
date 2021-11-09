@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
 
 Tasks:
 - Create two buffers of 50 bytes each, one on the stack and the other in the heap
-- Copy sentence to both buffers
+- Copy ```sentence``` to both buffers
 - Print out the two buffers
 - Make sure there are no memory leaks
 
