@@ -14,4 +14,4 @@
 1. [Static and Dynamic Libraries (optional)](worksheet10/ws10.md)
 1. [Threads Sharing a File](worksheet10/ws10.md)
 1. [Multi-Threaded Server](worksheet10/ws10.md)
-1. [Detecting memory leaks (Optional)](worksheet15/ws15.md)
+1. [Detecting memory leaks (optional)](worksheet15/ws15.md)
