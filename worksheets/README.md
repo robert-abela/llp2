@@ -1,0 +1,17 @@
+## System Programming Worksheets
+
+1. [Revision of C basics](worksheet01/ws01.md)
+1. [4 stages of building code](worksheet02/ws02.md)
+1. [Makefiles and Command Line Arguments](worksheet03/ws03.md)
+1. [Multiple Versions](worksheet04/ws04.md)
+1. [Program Size](worksheet05/ws05.md)
+1. [Stack Overflow](worksheet06/ws06.md)
+1. [Memory Corruption (optional)](worksheet07/ws07.md)
+1. [Data structures](worksheet08/ws08.md)
+1. [File IO - scores to grades](worksheet09/ws09.md)
+1. [Dummy Client & Server](worksheet10/ws10.md)
+1. [Caps Client & Server](worksheet10/ws10.md)
+1. [Static and Dynamic Libraries (optional)](worksheet10/ws10.md)
+1. [Threads Sharing a File](worksheet10/ws10.md)
+1. [Multi-Threaded Server](worksheet10/ws10.md)
+1. [Detecting memory leaks (Optional)](worksheet15/ws15.md)
