@@ -39,7 +39,8 @@ int main(int argc, char *argv[]) {
 
 	/* Prepare request */
 	strcpy(buffer, DUMMY_REQUEST);
-	printf("Sending: %s\n",buffer);
+	printf("Sending: %s", buffer);
+	printf("-------------------------------------------\n\n");
 
 	/* Send message to the server */
 	num_bytes = send(sockfd, buffer, strlen(buffer), 0);
@@ -57,12 +58,13 @@ int main(int argc, char *argv[]) {
 		num_bytes = recv(sockfd, buffer, BUFFER_SIZE-1, 0);
 		printf("%s",buffer);
 	} while (num_bytes > 0);
-	
+
 	if (num_bytes < 0) {
 		fprintf(stderr, "ERROR: Failed reading from socket\n");
 		return 5;
 	}
 	
+	printf("\n");
 	close(sockfd);
 	return 0;
 }
