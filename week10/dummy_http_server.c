@@ -6,11 +6,10 @@
 
 #include "dummy_http.h"
 
-int main( int argc, char *argv[] ) 
-{
+int main(int argc, char *argv[]) {
 	int sockfd, newsockfd, num_bytes;
 	char buffer[BUFFER_SIZE];
-	struct sockaddr_in serv_addr, cli_addr;
+	struct sockaddr_in serv_addr = {0}, cli_addr;
 	socklen_t clilen = sizeof(cli_addr);
 
 	/* Create a socket */
@@ -23,12 +22,11 @@ int main( int argc, char *argv[] )
 	/* allow to reuse the socket as soon as it stops being active */
 	int so_reuse_enabled = 1;
 	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &so_reuse_enabled, sizeof(int)) < 0) {
-    	fprintf(stderr, "setsockopt(SO_REUSEADDR) failed");
+		fprintf(stderr, "setsockopt(SO_REUSEADDR) failed");
 		return -2;
 	}
 
 	/* Initialize socket structure (sockarrd_in) */
-	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK); //or INADDR_ANY
 	serv_addr.sin_port = htons(HTTP_PORT);
@@ -77,6 +75,5 @@ int main( int argc, char *argv[] )
 	//}
 
 	close(sockfd);
-
 	return 0;
 }

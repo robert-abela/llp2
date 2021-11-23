@@ -5,8 +5,7 @@
 #include <assert.h>
 #include "dummy_http.h"
 
-int main(int argc, char *argv[]) 
-{
+int main(int argc, char *argv[]) {
 	int sockfd, num_bytes;
 	struct sockaddr_in serv_addr;
 	struct hostent *url;

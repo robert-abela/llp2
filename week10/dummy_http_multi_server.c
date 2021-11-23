@@ -5,8 +5,7 @@
 #include <pthread.h>
 #include "dummy_http.h"
 
-void* handle_client(void *socket)
-{
+void* handle_client(void *socket) {
 	char buffer[BUFFER_SIZE] = {0};
 	int* newsockfd_ptr = (int*)socket;
 	int newsockfd = *newsockfd_ptr;
@@ -34,9 +33,8 @@ void* handle_client(void *socket)
 	return NULL;
 }
 
-int main( int argc, char *argv[] ) 
-{
-	struct sockaddr_in serv_addr, cli_addr;
+int main(int argc, char *argv[]) {
+	struct sockaddr_in serv_addr = {0}, cli_addr;
 	socklen_t clilen = sizeof(cli_addr);
 	int sockfd, thread_res;
 	pthread_t mythread;
@@ -48,8 +46,14 @@ int main( int argc, char *argv[] )
 		return 1;
 	}
 
+	/* allow to reuse the socket as soon as it stops being active */
+	int so_reuse_enabled = 1;
+	if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &so_reuse_enabled, sizeof(int)) < 0) {
+		fprintf(stderr, "setsockopt(SO_REUSEADDR) failed");
+		return -2;
+	}
+
 	/* Initialize socket structure (sockarrd_in) */
-	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK); //or INADDR_ANY
 	serv_addr.sin_port = htons(HTTP_PORT);
