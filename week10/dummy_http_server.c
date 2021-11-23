@@ -45,8 +45,7 @@ int main(int argc, char *argv[]) {
 		return -4;
 	}
 
-	//for (;;)
-	//{
+	//for (;;) {
 		/* Accept connection from a client */
 		newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
 		if (newsockfd < 0) {

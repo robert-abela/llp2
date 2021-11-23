@@ -70,8 +70,7 @@ int main(int argc, char *argv[]) {
 		return 3;
 	}
 
-	for (;;)
-	{
+	for (;;) {
 		/* Accept connection from a client */
 		int newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
 		if (newsockfd < 0) {
@@ -80,8 +79,7 @@ int main(int argc, char *argv[]) {
 		}
 
 		thread_res = pthread_create(&mythread, NULL, handle_client, &newsockfd);
-		if (thread_res != 0)
-		{
+		if (thread_res != 0) {
 			fprintf(stderr, "ERROR: pthread_create() failed\n");
 			return 5;
 		}
