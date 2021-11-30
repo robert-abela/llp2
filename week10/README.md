@@ -22,7 +22,7 @@ We will be using the following command: ```nc host port``` with the command line
 
 ### Netstat (monitoring)
 We will be using the following command: ```netstat -tan | grep :port``` with the command line arguments being:
-* -tan: display TCP sockets in all the states (not just connected) in humeric format (80 instead of http)
+* -tan: display TCP sockets in all the states (not just connected) in numeric format (80 instead of http)
 * | grep port: print only the lines that have a specific port number in them, e.g. **| grep 9999** (the port we will be monitoring)
 
 
