@@ -1,6 +1,6 @@
 # Systems Programming (ITSYS-506-2005)
 This is the companian repository for Systems Programming (ITSYS-506-2005) course at [MCAST](https://www.mcast.edu.mt).
-It was previosly known as: Low Level Programming 2 (llp2)
+It was previosly known as: Low Level Programming 2 (llp2).
 
 The course is planned over 10 weeks of new content, with the remaining weeks dedicated to [worksheets](worksheets/README.md), [revision](revision), practice and assessment:
 
