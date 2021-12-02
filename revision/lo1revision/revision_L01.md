@@ -66,7 +66,7 @@ Check the size of the debug and release executables. Take note of the difference
 For this course you are expected to know how to use a debugger of your choice.  
 Mention at least two instances where a debugger was useful while doing this task.
 
-A number of programs with their respective core dumps can be found at: [crashes/intel](crashes/intel) (or [crashes/apple_m1](crashes/apple_m1) if you are using Apple M1 CPU). There Load each pair of files (e.g. one_binary and one_core) in gdb and answer the following questions:
+A number of programs with their respective core dumps can be found at: [crashes/intel](crashes/intel) (or [crashes/apple_m1](crashes/apple_m1)) if you are using Apple M1 CPU). There Load each pair of files (e.g. one_binary and one_core) in gdb and answer the following questions:
 
 * What line number of the program code was executed last?
 * Generate a stack trace of the execution at the time the core dump was created.
