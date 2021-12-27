@@ -12,7 +12,7 @@ bool update_values(int *width, int *height) {
 	return true;
 }
 
-int main(){
+int main(void) {
     int width = 0, height = 0;
     //bool ok = update_values(width, height);
 	bool ok = update_values(&width, &height);

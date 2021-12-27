@@ -3,7 +3,7 @@
 Consider the following program:
 ```c
 #include <stdio.h>
-void test() { 
+void test(void) { 
     /*static*/ int count = 0; 
     printf("%d\n", ++count); 
 }

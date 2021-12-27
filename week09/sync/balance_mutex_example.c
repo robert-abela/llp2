@@ -50,8 +50,7 @@ void *try_to_withdraw(void *tid)
 /**
  * Main entry point: creates and launches 4 threads.
  */
-int main()
-{
+int main(void) {
 	pthread_t threads[NUM_THREADS];
 	int thread_ids[NUM_THREADS];
 

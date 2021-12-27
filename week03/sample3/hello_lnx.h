@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-void hello() {
+void hello(void) {
   printf("Hello Linux!\n");
 }
 

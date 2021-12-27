@@ -8,14 +8,12 @@ struct Persons {
    int   age;
 }; 
 
-void print_person(struct Persons p)
-{
+void print_person(struct Persons p) {
 	printf("%s %s is %d yrs old.\nAddress is: %s\n", 
 		p.name, p.surname, p.age, p.address);
 }
 
-int main() 
-{
+int main(void) {
 	struct Persons p1;
 	
 	strcpy(p1.name, "John");

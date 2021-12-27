@@ -7,8 +7,7 @@ union my_union {
    char string[100];
 };
 
-int main()
-{
+int main(void) {
 	union my_union my_data;        
 
 	// Data corruption

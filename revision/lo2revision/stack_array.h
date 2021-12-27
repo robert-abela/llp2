@@ -14,19 +14,19 @@ int stack[MAX_SIZE];
 int top = EMPTY;
 
 /* Returns true if stack is empty */
-bool is_empty() 
+bool is_empty(void) 
 {
 	return true;
 }
 
 /* Returns true if stack is full */
-bool is_full() 
+bool is_full(void) 
 {
 	return false;
 }
 
 /* Pop the int on top of the stack or return NO_VALUE if stack empty */
-int pop() 
+int pop(void) 
 {
 	return NO_VALUE;
 }

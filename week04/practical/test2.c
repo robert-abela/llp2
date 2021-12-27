@@ -3,8 +3,7 @@
 
 char c;
 
-void do_user_input()
-{
+void do_user_input(void) {
 	char* buffer = (char*)malloc(128);
 	int number = 0;
 
@@ -17,8 +16,7 @@ void do_user_input()
 	free(buffer);
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
 	do_user_input();
 	return 0;
 }

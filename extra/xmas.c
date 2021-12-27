@@ -4,8 +4,7 @@
 #define STAR '*'
 
 /* Adapted from: http://www.programering.com/a/MTOyEDMwATY.html */
-int main()
-{
+int main(void) {
     int starNo,spaceNo;
 
     for (int i=1; i<=ROWS; i++)

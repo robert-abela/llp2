@@ -8,8 +8,7 @@ struct Persons {
    int   age;
 }; 
  
-int main() 
-{
+int main(void) {
 	struct Persons p1;
 	
 	strcpy(p1.name, "John");

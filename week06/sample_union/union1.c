@@ -6,11 +6,8 @@ union my_union {
    char string[100];
 };
 
-int main()
-{
+int main(void) {
    union my_union my_data;        
-
    printf("size of my_data : %ld\n", sizeof(my_data));
-
    return 0;
 }

@@ -11,8 +11,7 @@
 #define ONE_KB	1024
 #define BUFF_SIZE 128 * ONE_KB	
 
-int main()
-{
+int main(void) {
 	char *buffer1 = (char*)malloc(BUFF_SIZE);
 	strcpy(buffer1, "Hello");
 	free(buffer1);

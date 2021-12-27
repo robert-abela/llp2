@@ -25,8 +25,7 @@ struct packed_car_bool_struct {
     bool has_tinted:1;
 };
 
-int main() 
-{
+int main(void) {
 	struct int_car_struct i_car1;
 	struct packed_car_int_struct i_packed_car1;
 	struct bool_car_struct b_car1;

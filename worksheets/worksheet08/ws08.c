@@ -17,7 +17,7 @@ typedef struct Persons
 person *list_head = NULL;
 
 /* Retrieves the list head record or NULL if list is empty */
-person* get_list_head() {
+person* get_list_head(void) {
     return list_head;
 }
 
@@ -33,7 +33,7 @@ void set_list_head(person* new_head) {
 //    |_.__/ \__,_|___/_|\___|
 
 /* Finds the last allocation entry in list, or returns NULL if list is empty */
-person* find_last() {
+person* find_last(void) {
     return NULL;
 }
 
@@ -61,11 +61,11 @@ bool remove_person_at_index(int index) {
 }
 
 /* Frees all the persons in the list */
-void free_list() {
+void free_list(void) {
 }
 
 /* Calculate the total number of persons in the list */
-int count_list_size() {
+int count_list_size(void) {
     int total = 0;
     return total;
 }

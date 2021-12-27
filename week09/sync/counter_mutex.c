@@ -21,8 +21,7 @@ void *do_work(void *ptr)
 }
 
 /** Launches NUM_THREADS threads to increment counter to NUM_THREADS*ITERATIONS */
-void try()
-{
+void try(void) {
 	pthread_t threads[NUM_THREADS];
 	//start all the threads
 	for (int i=0; i<NUM_THREADS; i++)
@@ -34,8 +33,7 @@ void try()
 		pthread_join(threads[j], NULL);
 }
 
-int main()
-{
+int main(void) {
 	//initialise mutex
 	pthread_mutex_init(&counter_mutex, NULL);
 	

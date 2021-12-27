@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "datatypes.h"
 
-int main() {
+int main(void) {
     char one_byte = 0;
     short two_bytes = 0; //int (on old systems)
     int four_bytes = 0; //float

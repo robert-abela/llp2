@@ -7,8 +7,7 @@
 int counter = 0;
 
 /* Increments counter ITERATIONS times */
-void *do_work(void *ptr)
-{
+void *do_work(void *ptr) {
 	for (int k=0; k<ITERATIONS; k++)
 		counter = counter + 1;
 
@@ -16,8 +15,7 @@ void *do_work(void *ptr)
 }
 
 /** Launches NUM_THREADS threads that try to increment counter to NUM_THREADS*ITERATIONS */
-void try()
-{
+void try(void) {
 	pthread_t threads[NUM_THREADS];
 
 	//start all the threads
@@ -30,8 +28,7 @@ void try()
 		pthread_join(threads[j], NULL);
 }
 
-int main(void)
-{
+int main(void) {
 	try();
 	printf("counter = %d\n", counter);
 	return 0;
