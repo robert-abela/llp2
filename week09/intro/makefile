@@ -18,4 +18,4 @@ thread_return:
 	gcc -Wall -o thread_return thread_return.c -lpthread
 
 clean:
-	-rm check_posix thread_example thread_params_example thread_return
+	-rm check_posix thread_example thread_params_example thread_return thread_multiple_params_example
