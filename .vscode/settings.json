@@ -3,6 +3,7 @@
         "datatypes.h": "c",
         "stdio.h": "c",
         "unistd.h": "c",
-        "inet.h": "c"
+        "inet.h": "c",
+        "header.h": "c"
     }
 }
