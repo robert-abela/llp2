@@ -16,34 +16,37 @@
 #include <string.h>
 
 int global_int;
-char string_global[100];
+char global_string[100];
 
 int main(void) {
     int stack_int;
     printf("stack_int:  %d\n", stack_int); //warning: ‘stack_int’ is used uninitialized
-    printf("global_int: %d\n", global_int);
-    //printf("global_int:  %p\n", &global_int);
-    //printf("stack_int:  %p\n", &stack_int);
+    printf("global_int: %d\n\n", global_int); //no warning
 
-    char *string_heap = malloc(100);
-    char string_stack[100];
-    //printf("string_heap:  %p\n", string_heap);
-    //printf("string_stack:  %p\n", &string_stack);
-    //printf("string_global:  %p\n", &string_global);
-    strncpy(string_heap, "Robert Heap", 100);
-    strncpy(string_stack, "Robert Stack", 100);
-    strncpy(string_global, "Robert Global", 100);
+    char *heap_string = malloc(100);
+    char stack_array[100];
+    char *stack_string;
 
-    char *stack_new;
-    printf("stack_new:  %p\n", &stack_new);
+    strncpy(heap_string, "I am in the  Heap", 100);
+    strncpy(stack_array, "I am on the Stack", 100);
+    strncpy(global_string, "I am a Global", 100);
+
+    printf("global int:    %p\n", &global_int);
+    printf("global string: %p\n", &global_string);
+    printf("-----------------------------\n");
+    printf("heap string:   %p\n", heap_string);
+    printf("-----------------------------\n");
+    printf("stack int:     %p\n", &stack_int);
+    printf("stack string:  %p\n", &stack_string);
+    printf("stack array:   %p\n\n", &stack_array);
     
-    stack_new = string_heap;
-    printf("string_heap->stack_new:  %s\n", stack_new);
-    stack_new = string_stack;
-    printf("string_stack->stack_new:  %s\n", stack_new);
-    stack_new = string_global;
-    printf("string_global->stack_new:  %s\n", stack_new);
+    stack_string = heap_string;
+    printf("stack_string pointing to the heap:  %s\n", stack_string);
+    stack_string = stack_array;
+    printf("stack_string pointing to the stack: %s\n", stack_string);
+    stack_string = global_string;
+    printf("stack_string pointing to global:    %s\n", stack_string);
 
-    free(string_heap);
+    free(heap_string);
     return 0;
 }
