@@ -35,6 +35,8 @@ int main(void) {
 
     //Option 2
     struct FullName *structure = malloc(sizeof(struct FullName));
+    if (structure == NULL)
+        return -1;
     strcpy(structure->name, "Kathleen");
     strcpy(structure->surname, "Booth");
     print_chars((char*)structure, BUFFSIZE);
