@@ -20,6 +20,6 @@ int main(int argc, char* argv[]) {
 
     char* array_heap = malloc(sizeof(char) * 5);
     printf("%c\n", array_heap[0]);
-
+    free(array_heap);
     return 0;
 }
