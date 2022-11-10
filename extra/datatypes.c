@@ -19,7 +19,7 @@ int main(void) {
     //putting smaller values in larger spaces -> no warning
     eight_bytes = four_bytes = two_bytes = one_byte;
 
-    one_byte = 555222; //overflow warning
+    one_byte = 555222; //warning: overflow in conversion from ‘int’ to ‘char’
     printf("char using %%d %d\n", one_byte);
 
     four_bytes = 555222;

@@ -20,7 +20,7 @@ char string_global[100];
 
 int main(void) {
     int stack_int;
-    printf("stack_int:  %d\n", stack_int);
+    printf("stack_int:  %d\n", stack_int); //warning: ‘stack_int’ is used uninitialized
     printf("global_int: %d\n", global_int);
     //printf("global_int:  %p\n", &global_int);
     //printf("stack_int:  %p\n", &stack_int);
