@@ -27,7 +27,7 @@ int main(void) {
     if (buffer == NULL)
         return -1;
 
-    char *name = buffer, *surname = buffer + 50;
+    char *name = buffer, *surname = buffer + 25;
     strcpy(name, "Kathleen");
     strcpy(surname, "Booth");
     print_chars(buffer, BUFFSIZE);
