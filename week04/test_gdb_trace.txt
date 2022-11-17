@@ -6,7 +6,7 @@ rm test
 rm: cannot remove 'test': No such file or directory
 makefile:8: recipe for target 'clean' failed
 make: [clean] Error 1 (ignored)
-gcc -Wall -g -o0 -o test test.c
+gcc -Wall -g -O0 -o test test.c
 
 llp2@ubuntu:~/Documents/llp2/week04$ ls
 makefile  test  practical  test.c  test.dgb.trace.txt
