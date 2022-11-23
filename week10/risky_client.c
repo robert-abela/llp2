@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
 
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     connect(sockfd, (struct sockaddr *)&srv_addr, sizeof(srv_addr));
-    send(sockfd, "Hello\n\0", 7, 0);
+    send(sockfd, "Hello\n", 7, 0);
     recv(sockfd, buf, MAX_DATA_SIZE-1, 0);
 
     printf("Received: %s", buf);
