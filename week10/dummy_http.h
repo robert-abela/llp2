@@ -2,8 +2,8 @@
 #define HTTP_PORT 		80
 #define MAX_CONNECTIONS 5
 
-#define DUMMY_REQUEST 	"GET http://www.mcast.edu.mt HTTP/1.0\r\n\
-\r\n"
+#define DUMMY_REQUEST 	"GET / HTTP/1.1\r\n\
+Host: www.mcast.edu.mt\r\n\r\n"
 
 #define DUMMY_RESPONSE 	"HTTP/1.0 200 OK\r\n\
 Server: LLP2 DummyServer (1.0)\r\n\
