@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_in srv_addr = {0};
 	
     srv_addr.sin_family = AF_INET;      /* host byte order */
-   	srv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
+    srv_addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
     srv_addr.sin_port = htons(11111);    /* short, network byte order */
 
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
