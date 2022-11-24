@@ -1,5 +1,5 @@
 #define BUFFER_SIZE		1024
-#define HTTP_PORT 		80
+#define HTTP_PORT 		8080
 #define MAX_CONNECTIONS 5
 
 #define DUMMY_REQUEST 	"GET / HTTP/1.1\r\n\
