@@ -5,6 +5,7 @@
         "unistd.h": "c",
         "inet.h": "c",
         "header.h": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "dummy_http.h": "c"
     }
 }
