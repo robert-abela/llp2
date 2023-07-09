@@ -1,7 +1,7 @@
 # Systems Programming Linux Setup
 
 ## Step 0: Get a Linux running
-It is suggested to create a VM using latest LTS of your preferred Linux. I use [Zorin](https://zorin.com/os/download/16/core/), MCAST uses [Xubuntu](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/20.04/release/). Any Linux is fine really, ideally pick from [Debian family](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based).
+It is suggested to create a VM using latest LTS of your preferred Linux. You can use [Zorin](https://zorin.com/os/download/16/core/), [Ubuntu](https://ubuntu.com/download/desktop), [Xubuntu](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/20.04/release/) or any Linux from [Debian family](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based).
 
 If you need VM software, you can use:
 - [VMWare Pro (trial)](https://www.vmware.com/go/getworkstation-win) - ask me for a license, don't pirate software!
@@ -29,7 +29,7 @@ If you need VM software, you can use:
     cd ~/git/
     git clone https://github.com/robert-abela/llp2
 
-## Optional Steps
+## Optional Steps (skip unless you know that you need them)
 
 ### Optional Step 1: Install the default JDK
     sudo apt-get install default-jdk
@@ -39,7 +39,7 @@ If you need VM software, you can use:
 - Download Eclipse for Linux 64-bit
 - Extract contents to ``/home/student/eclipse``
 
-#### Optional Step 2.1: Create eclipse shortcut
+#### Optional Step 2.1: Create Eclipse shortcut
     cd /usr/bin
     sudo ln -s ~/eclipse/eclipse
 
