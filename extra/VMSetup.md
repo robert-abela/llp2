@@ -29,29 +29,4 @@ If you need VM software, you can use:
     cd ~/git/
     git clone https://github.com/robert-abela/llp2
 
-## Optional Steps (skip unless you know that you need them)
-
-### Optional Step 1: Install the default JDK
-    sudo apt-get install default-jdk
-
-### Optional Step 2: Install Eclipse
-- [Go to Eclipse IDE for C/C++ Developers](https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-cc-developers)
-- Download Eclipse for Linux 64-bit
-- Extract contents to ``/home/student/eclipse``
-
-#### Optional Step 2.1: Create Eclipse shortcut
-    cd /usr/bin
-    sudo ln -s ~/eclipse/eclipse
-
-Create a ``/usr/share/applications/eclipse.desktop`` file with the following contents:
-
-    [Desktop Entry]
-    Name=Eclipse 
-    Type=Application
-    Exec=eclipse
-    Terminal=false
-    Icon=~/eclipse/icon.xpm
-    Comment=Integrated Development Environment
-    NoDisplay=false
-    Categories=Development;IDE;
-    Name[en]=Eclipse
+- [Optional GitHub Desktop](https://github.com/kontr0x/github-desktop-install#readme)
