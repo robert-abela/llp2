@@ -22,7 +22,7 @@ If you need VM software, you can use:
     sudo apt-get install chromium-browser
 
 ## Step 4: Install development tools
-    sudo apt-get install gcc make gdb git g++
+    sudo apt-get install gcc make gdb git g++ curl
 
 ## Step 5: Clone git repository
     mkdir ~/git/
