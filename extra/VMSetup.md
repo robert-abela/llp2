@@ -23,7 +23,7 @@ Or try the long way
     sudo apt install code
 
 ## Step 3: Install Chrome
-    sudo apt-get install chromium-browser
+    sudo snap install chromium
 
 ## Step 4: Install development tools
     sudo apt-get install gcc make gdb git g++ curl
