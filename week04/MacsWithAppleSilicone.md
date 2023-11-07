@@ -18,13 +18,13 @@ warning: Unexpected size of section `.reg2' in core file.
 
 ```
 
-As you can see gdb has problems with loading the core dump correctly. [gdb-multiarch](https://packages.ubuntu.com/focal/gdb-multiarch) is a version of gdb that is able to support multiple architectures. You need to first insall it 
+As you can see gdb has problems with loading the core dump correctly. [gdb-multiarch](https://packages.ubuntu.com/focal/gdb-multiarch) is a version of gdb that is able to support multiple architectures. You need to first install itP 
 
 ```
 sudo apt install gdb-multiarch
 ``` 
 
-and then use it as you do with normal gdb
+and then use it as you do with normal gdb:
 
 ```
 gdb-multiarch program core
