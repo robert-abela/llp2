@@ -1,6 +1,6 @@
 # CPU architecture and core dumps
 
-A core dump is a snaphot of the process memory (plus CPU registers) at the time of the crash. All the samples in this repository are generated using an Intel 64bit CPU, the Intel(R) Core(TM) i5-7400. This means that CPUs with different achirectures will not be able to load the core dumps correctly. This is the case of the Apple M1 which is ARM-based. 
+A core dump is a snaphot of the process memory (plus CPU registers) at the time of the crash. All the samples in this repository are generated using an Intel 64bit CPU, the Intel(R) Core(TM) i5-7400. This means that CPUs with different achirectures will not be able to load the core dumps correctly. This is the case of the Apple M1/2/3 which is ARM-based. 
 
 Loading Intel core dumps on Apple silicone will result in something similar to the following:
 
@@ -18,13 +18,13 @@ warning: Unexpected size of section `.reg2' in core file.
 
 ```
 
-As you can see gdb has problems with loading the core dump correctly. [gdb-multiarch](https://packages.ubuntu.com/focal/gdb-multiarch) is a version of gdb that is able to support multiple architectures. You need to first insall it 
+As you can see gdb has problems with loading the core dump correctly. [gdb-multiarch](https://packages.ubuntu.com/focal/gdb-multiarch) is a version of gdb that is able to support multiple architectures. You need to first install itP 
 
 ```
 sudo apt install gdb-multiarch
 ``` 
 
-and then use it as you do with normal gdb
+and then use it as you do with normal gdb:
 
 ```
 gdb-multiarch program core
